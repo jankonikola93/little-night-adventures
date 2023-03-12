@@ -1,0 +1,243 @@
+[gd_scene load_steps=13 format=3 uid="uid://qfsmaa4wm67m"]
+
+[ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_f48wy"]
+[ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_yqixq"]
+[ext_resource type="PackedScene" uid="uid://bcvwkpwcy748" path="res://platforms/platform_gray_g_right.tscn" id="3_cu63f"]
+[ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="3_rctlw"]
+[ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="4_kpr0s"]
+[ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="5_4ojsu"]
+[ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="5_bs1a0"]
+[ext_resource type="PackedScene" uid="uid://ceg5mjbxam0mx" path="res://game_elements/witch_portal.tscn" id="7_t74sr"]
+[ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="8_7e1ad"]
+[ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="9_nxvky"]
+[ext_resource type="PackedScene" uid="uid://b3r7co36snufs" path="res://characters/enemies/spider.tscn" id="11_dxatw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jvyq"]
+normal = Vector2(0, 1)
+
+[node name="Level3" instance=ExtResource("1_f48wy")]
+level_number = 3
+
+[node name="TopBoundary2" type="StaticBody2D" parent="." index="4"]
+position = Vector2(16350, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_5jvyq")
+
+[node name="RightBoundary" parent="." index="5"]
+position = Vector2(16350, 0)
+
+[node name="EndingArea" parent="." index="6"]
+position = Vector2(16251, 597)
+
+[node name="Platform1" parent="Platforms" index="0" instance=ExtResource("2_yqixq")]
+position = Vector2(260, 891)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_yqixq")]
+position = Vector2(785, 891)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_yqixq")]
+position = Vector2(1310, 891)
+
+[node name="Platform6" parent="Platforms" index="3" instance=ExtResource("2_yqixq")]
+position = Vector2(1834, 891)
+
+[node name="Platform7" parent="Platforms" index="4" instance=ExtResource("2_yqixq")]
+position = Vector2(2358, 891)
+
+[node name="Platform4" parent="Platforms" index="5" instance=ExtResource("3_cu63f")]
+position = Vector2(490, 622)
+
+[node name="Platform5" parent="Platforms" index="6" instance=ExtResource("3_cu63f")]
+position = Vector2(1130, 622)
+
+[node name="Platform8" parent="Platforms" index="7" instance=ExtResource("3_cu63f")]
+position = Vector2(3160, 894)
+
+[node name="SpikesPlatform1" parent="Platforms" index="8" instance=ExtResource("4_kpr0s")]
+position = Vector2(3671, 874)
+
+[node name="SpikesPlatform2" parent="Platforms" index="9" instance=ExtResource("4_kpr0s")]
+position = Vector2(4015, 639)
+spikes_direction = 1
+
+[node name="SpikesPlatform3" parent="Platforms" index="10" instance=ExtResource("4_kpr0s")]
+position = Vector2(4399, 433)
+
+[node name="Platform9" parent="Platforms" index="11" instance=ExtResource("2_yqixq")]
+position = Vector2(5141, 447)
+
+[node name="Platform10" parent="Platforms" index="12" instance=ExtResource("2_yqixq")]
+position = Vector2(5665, 447)
+
+[node name="Platform11" parent="Platforms" index="13" instance=ExtResource("2_yqixq")]
+position = Vector2(6189, 447)
+
+[node name="Platform12" parent="Platforms" index="14" instance=ExtResource("2_yqixq")]
+position = Vector2(7231, 805)
+
+[node name="Platform13" parent="Platforms" index="15" instance=ExtResource("2_yqixq")]
+position = Vector2(7755, 805)
+
+[node name="Platform14" parent="Platforms" index="16" instance=ExtResource("2_yqixq")]
+position = Vector2(8279, 805)
+
+[node name="Platform15" parent="Platforms" index="17" instance=ExtResource("2_yqixq")]
+position = Vector2(9279, 805)
+
+[node name="Platform16" parent="Platforms" index="18" instance=ExtResource("2_yqixq")]
+position = Vector2(9803, 805)
+
+[node name="Platform17" parent="Platforms" index="19" instance=ExtResource("2_yqixq")]
+position = Vector2(10327, 805)
+
+[node name="Platform18" parent="Platforms" index="20" instance=ExtResource("5_bs1a0")]
+position = Vector2(11277, 725)
+
+[node name="Platform19" parent="Platforms" index="21" instance=ExtResource("3_cu63f")]
+position = Vector2(11930, 413)
+
+[node name="Platform20" parent="Platforms" index="22" instance=ExtResource("3_cu63f")]
+position = Vector2(12640, 655)
+
+[node name="Platform21" parent="Platforms" index="23" instance=ExtResource("3_cu63f")]
+position = Vector2(13197, 655)
+
+[node name="Platform22" parent="Platforms" index="24" instance=ExtResource("3_cu63f")]
+position = Vector2(13741, 655)
+
+[node name="Platform23" parent="Platforms" index="25" instance=ExtResource("3_cu63f")]
+position = Vector2(14284, 655)
+
+[node name="Platform24" parent="Platforms" index="26" instance=ExtResource("2_yqixq")]
+position = Vector2(15059, 659)
+
+[node name="Platform25" parent="Platforms" index="27" instance=ExtResource("2_yqixq")]
+position = Vector2(15583, 659)
+
+[node name="Platform26" parent="Platforms" index="28" instance=ExtResource("2_yqixq")]
+position = Vector2(16107, 659)
+
+[node name="Spinner1" parent="Enemies" index="0" instance=ExtResource("3_rctlw")]
+position = Vector2(426, 617)
+
+[node name="Spinner2" parent="Enemies" index="1" instance=ExtResource("3_rctlw")]
+position = Vector2(738, 859)
+rotation_direction = 1
+
+[node name="Spinner3" parent="Enemies" index="2" instance=ExtResource("3_rctlw")]
+position = Vector2(1074, 617)
+
+[node name="Spinner4" parent="Enemies" index="3" instance=ExtResource("3_rctlw")]
+position = Vector2(13182, 628)
+
+[node name="Spinner5" parent="Enemies" index="4" instance=ExtResource("3_rctlw")]
+position = Vector2(13726, 628)
+rotation_direction = 1
+
+[node name="Spinner6" parent="Enemies" index="5" instance=ExtResource("3_rctlw")]
+position = Vector2(14267, 628)
+
+[node name="Wraith1" parent="Enemies" index="6" instance=ExtResource("5_4ojsu")]
+position = Vector2(1762, 763)
+speed = 400.0
+wait_time = 0.7
+patrol_length = 480
+
+[node name="Wraith2" parent="Enemies" index="7" instance=ExtResource("5_4ojsu")]
+position = Vector2(1898, 763)
+speed = 400.0
+wait_time = 0.7
+patrol_length = 480
+
+[node name="Wraith3" parent="Enemies" index="8" instance=ExtResource("5_4ojsu")]
+position = Vector2(5392, 317)
+
+[node name="Wraith4" parent="Enemies" index="9" instance=ExtResource("5_4ojsu")]
+position = Vector2(5928, 317)
+patrol_length = -200
+
+[node name="Wraith5" parent="Enemies" index="10" instance=ExtResource("5_4ojsu")]
+position = Vector2(9799, 676)
+speed = 400.0
+wait_time = 0.5
+patrol_length = 400
+
+[node name="Wraith6" parent="Enemies" index="11" instance=ExtResource("5_4ojsu")]
+position = Vector2(15316, 529)
+wait_time = 0.7
+
+[node name="Wraith7" parent="Enemies" index="12" instance=ExtResource("5_4ojsu")]
+position = Vector2(15840, 529)
+wait_time = 0.7
+
+[node name="WitchPortal1" parent="Enemies" index="13" instance=ExtResource("7_t74sr")]
+position = Vector2(6684, 634)
+direction = 1
+
+[node name="WitchPortal2" parent="Enemies" index="14" instance=ExtResource("7_t74sr")]
+position = Vector2(10400, 569)
+
+[node name="WitchPortal3" parent="Enemies" index="15" instance=ExtResource("7_t74sr")]
+position = Vector2(10640, 425)
+direction = 1
+
+[node name="BlackFlake1" parent="Enemies" index="16" instance=ExtResource("8_7e1ad")]
+position = Vector2(7230, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = 300
+
+[node name="BlackFlake2" parent="Enemies" index="17" instance=ExtResource("8_7e1ad")]
+position = Vector2(7398, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = 300
+
+[node name="BlackFlake3" parent="Enemies" index="18" instance=ExtResource("8_7e1ad")]
+position = Vector2(7566, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = 300
+
+[node name="BlackFlake4" parent="Enemies" index="19" instance=ExtResource("8_7e1ad")]
+position = Vector2(7758, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = -300
+
+[node name="BlackFlake5" parent="Enemies" index="20" instance=ExtResource("8_7e1ad")]
+position = Vector2(7926, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = -300
+
+[node name="BlackFlake6" parent="Enemies" index="21" instance=ExtResource("8_7e1ad")]
+position = Vector2(8094, 760)
+speed = 500.0
+wait_time = 0.5
+patrol_length = -300
+
+[node name="DoubleSpikes1" parent="Enemies" index="22" instance=ExtResource("9_nxvky")]
+position = Vector2(8794, 465)
+
+[node name="DoubleSpikes2" parent="Enemies" index="23" instance=ExtResource("9_nxvky")]
+position = Vector2(8794, 977)
+
+[node name="DoubleSpikes3" parent="Enemies" index="24" instance=ExtResource("9_nxvky")]
+position = Vector2(11560, 104)
+
+[node name="DoubleSpikes4" parent="Enemies" index="25" instance=ExtResource("9_nxvky")]
+position = Vector2(12280, 104)
+
+[node name="DoubleSpikes5" parent="Enemies" index="26" instance=ExtResource("9_nxvky")]
+position = Vector2(15320, 184)
+
+[node name="DoubleSpikes6" parent="Enemies" index="27" instance=ExtResource("9_nxvky")]
+position = Vector2(15820, 184)
+
+[node name="Spider1" parent="Enemies" index="28" instance=ExtResource("11_dxatw")]
+position = Vector2(11559, 368)
+
+[node name="Spider2" parent="Enemies" index="29" instance=ExtResource("11_dxatw")]
+position = Vector2(12279, 368)

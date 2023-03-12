@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8kr6kahgrwy1"]
+
+[ext_resource type="Texture2D" uid="uid://dw87ajn773rv4" path="res://assets/other/6.png" id="1_8ujjy"]
+
+[node name="Cemitery" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_8ujjy")

@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjpmbjj7kesaj"]
+
+[ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_0ckaw"]
+[ext_resource type="Script" path="res://platforms/spikes_platform.gd" id="2_5u7wr"]
+[ext_resource type="Texture2D" uid="uid://c5410d254g8fv" path="res://assets/platforms/24.png" id="2_7lkpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxkxw"]
+size = Vector2(202, 20)
+
+[sub_resource type="Animation" id="Animation_fap83"]
+resource_name = "rotate"
+length = 3.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 3.14159, 3.14159, 6.28319, 6.28319, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_f8xwg"]
+resource_name = "rotate2"
+length = 3.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.14159, 6.28319, 6.28319, 6.28319, 9.42478, 9.42478, 9.42478]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dj0mh"]
+_data = {
+"rotate": SubResource("Animation_fap83"),
+"rotate2": SubResource("Animation_f8xwg")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5y3t"]
+size = Vector2(196, 20)
+
+[node name="SpikesPlatform" instance=ExtResource("1_0ckaw")]
+rotation = 3.14159
+collision_mask = 0
+script = ExtResource("2_5u7wr")
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_7lkpl")
+flip_v = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(7.47998e-05, -28)
+shape = SubResource("RectangleShape2D_wxkxw")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_dj0mh")
+}
+
+[node name="HurtBox" type="Area2D" parent="." index="3"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(-6.84499e-05, 27)
+shape = SubResource("RectangleShape2D_a5y3t")

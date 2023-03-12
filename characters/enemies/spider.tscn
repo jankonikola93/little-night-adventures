@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3r7co36snufs"]
+
+[ext_resource type="Texture2D" uid="uid://jbp4tww2vq67" path="res://assets/characters/enemies/5.png" id="1_fgwdw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0e5b"]
+radius = 35.0
+height = 146.0
+
+[node name="Spider" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y0e5b")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1, -76)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_fgwdw")

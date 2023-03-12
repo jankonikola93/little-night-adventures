@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx618wve07s3r"]
+
+[ext_resource type="Texture2D" uid="uid://cmwa5qxovadjn" path="res://assets/ui/EmptyBox2.png" id="1_6wi0x"]
+[ext_resource type="Script" path="res://ui/game_over_menu.gd" id="1_v4jcp"]
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="2_l665r"]
+[ext_resource type="PackedScene" uid="uid://2gjakg0fxcj8" path="res://ui/level_menu_button.tscn" id="4_glp7b"]
+[ext_resource type="Texture2D" uid="uid://bwjlvpwdxlvjk" path="res://assets/characters/player/ClosedEyes.png" id="4_slw5n"]
+[ext_resource type="Texture2D" uid="uid://cynd8hs74ydex" path="res://assets/ui/RestartBtn.png" id="5_6dtvj"]
+[ext_resource type="Texture2D" uid="uid://h1myoygy6pb" path="res://assets/ui/RestartBtn_2.png" id="6_4vkmu"]
+[ext_resource type="Script" path="res://ui/base_texture_button.gd" id="7_thhyi"]
+
+[node name="GameOverMenu" type="Popup"]
+process_mode = 2
+transparent_bg = true
+size = Vector2i(408, 500)
+script = ExtResource("1_v4jcp")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 408.0
+offset_bottom = 500.0
+texture = ExtResource("1_6wi0x")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme = ExtResource("2_l665r")
+theme_override_font_sizes/font_size = 40
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="PlayerImage" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -120.0
+offset_right = 74.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_slw5n")
+
+[node name="Buttons" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = 68.0
+offset_right = 66.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="LevelMenuButton" parent="Background/Buttons" instance=ExtResource("4_glp7b")]
+layout_mode = 2
+
+[node name="RestartButton" type="TextureButton" parent="Background/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("5_6dtvj")
+texture_hover = ExtResource("6_4vkmu")
+texture_focused = ExtResource("6_4vkmu")
+script = ExtResource("7_thhyi")
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[connection signal="pressed" from="Background/Buttons/RestartButton" to="." method="_on_restart_button_pressed"]

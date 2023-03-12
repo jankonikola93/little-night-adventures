@@ -1,0 +1,207 @@
+[gd_scene load_steps=27 format=3 uid="uid://c16ekw5g5cq5h"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_2xgf8"]
+[ext_resource type="PackedScene" uid="uid://b5rswdpirdwyv" path="res://ui/menu_button.tscn" id="1_ylyyu"]
+[ext_resource type="Texture2D" uid="uid://bokh0cbkpcqcg" path="res://assets/platforms/11.png" id="3_0nwmr"]
+[ext_resource type="PackedScene" uid="uid://clf20f7cjfcdm" path="res://ui/confirmation_dialog.tscn" id="3_fwdlk"]
+[ext_resource type="PackedScene" uid="uid://l0xclwhdxqyk" path="res://ui/animated_character.tscn" id="3_o5r71"]
+[ext_resource type="Texture2D" uid="uid://o8qfv57wao1v" path="res://assets/backgrounds/night-sky/Sky.png" id="3_qs7g0"]
+[ext_resource type="Texture2D" uid="uid://yac5ngreowh" path="res://assets/backgrounds/night-sky/BG_Decor.png" id="4_5x8ia"]
+[ext_resource type="Texture2D" uid="uid://b7upe3dav58rs" path="res://assets/backgrounds/night-sky/Middle_Decor.png" id="5_3rbgp"]
+[ext_resource type="Texture2D" uid="uid://dh6p7ql1fqqxh" path="res://assets/platforms/12.png" id="6_jvbn5"]
+[ext_resource type="Texture2D" uid="uid://5vlml00j4p8" path="res://assets/platforms/5.png" id="7_fabcn"]
+[ext_resource type="PackedScene" uid="uid://bo1iropvfd4d2" path="res://objects/house_a.tscn" id="8_0san8"]
+[ext_resource type="PackedScene" uid="uid://8kr6kahgrwy1" path="res://objects/cemitery.tscn" id="9_p70sl"]
+[ext_resource type="PackedScene" uid="uid://l4aprsf82kcv" path="res://objects/house_b.tscn" id="10_qy8gr"]
+[ext_resource type="PackedScene" uid="uid://by6ivurdlda07" path="res://objects/house_c.tscn" id="11_ib2j8"]
+[ext_resource type="PackedScene" uid="uid://dsu3jbhcde52x" path="res://objects/light_on.tscn" id="12_vw04w"]
+[ext_resource type="PackedScene" uid="uid://dyw5htsgilltf" path="res://objects/tree_b.tscn" id="13_xutgs"]
+[ext_resource type="PackedScene" uid="uid://tkjbn2cl4oc3" path="res://objects/tree_a.tscn" id="14_jlqo2"]
+[ext_resource type="PackedScene" uid="uid://brwdvkansjqe7" path="res://objects/gravestone.tscn" id="15_r0ens"]
+[ext_resource type="Texture2D" uid="uid://dgxpv1rdbarxp" path="res://assets/platforms/6.png" id="16_64ym6"]
+[ext_resource type="Texture2D" uid="uid://ko8wef3uhoxk" path="res://assets/platforms/10.png" id="17_qeayf"]
+[ext_resource type="PackedScene" uid="uid://8wi0um4bjwrv" path="res://objects/fence.tscn" id="18_egfum"]
+[ext_resource type="PackedScene" uid="uid://ds700tjtvspa6" path="res://objects/house_d.tscn" id="19_3r1d4"]
+[ext_resource type="PackedScene" uid="uid://lk5idjtkam73" path="res://objects/tree_c.tscn" id="20_25agb"]
+[ext_resource type="PackedScene" uid="uid://b7ytrrjbc4of8" path="res://objects/heel.tscn" id="20_r6gkg"]
+[ext_resource type="PackedScene" uid="uid://ej63iuqsjmla" path="res://objects/tree_e.tscn" id="21_5p5aj"]
+[ext_resource type="PackedScene" uid="uid://dlnnncnrcwl7s" path="res://objects/swing.tscn" id="23_owusg"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xgf8")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(960, 540)
+texture = ExtResource("3_qs7g0")
+
+[node name="MiddleClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/MiddleClouds"]
+position = Vector2(960, 540)
+texture = ExtResource("4_5x8ia")
+
+[node name="TopClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/TopClouds"]
+position = Vector2(960, 540)
+texture = ExtResource("5_3rbgp")
+
+[node name="Decoration" type="Node2D" parent="."]
+
+[node name="Platform1" type="Sprite2D" parent="Decoration"]
+position = Vector2(956, 899)
+texture = ExtResource("3_0nwmr")
+
+[node name="Platform4" type="Sprite2D" parent="Decoration"]
+position = Vector2(154, 599)
+texture = ExtResource("7_fabcn")
+
+[node name="Platform10" type="Sprite2D" parent="Decoration"]
+position = Vector2(1792, 552)
+texture = ExtResource("7_fabcn")
+flip_h = true
+
+[node name="Platform5" type="Sprite2D" parent="Decoration"]
+position = Vector2(155, 755)
+texture = ExtResource("3_0nwmr")
+
+[node name="Platform2" type="Sprite2D" parent="Decoration"]
+position = Vector2(243, 1020)
+texture = ExtResource("6_jvbn5")
+flip_h = true
+
+[node name="HouseA" parent="Decoration" instance=ExtResource("8_0san8")]
+position = Vector2(117, 796)
+
+[node name="Cemitery" parent="Decoration" instance=ExtResource("9_p70sl")]
+position = Vector2(386, 851)
+
+[node name="HouseB" parent="Decoration" instance=ExtResource("10_qy8gr")]
+position = Vector2(101, 496)
+
+[node name="HouseC" parent="Decoration" instance=ExtResource("11_ib2j8")]
+position = Vector2(330, 462)
+
+[node name="LightOn" parent="Decoration" instance=ExtResource("12_vw04w")]
+position = Vector2(231, 484)
+flip_h = true
+
+[node name="TreeB" parent="Decoration" instance=ExtResource("13_xutgs")]
+position = Vector2(66, 193)
+
+[node name="TreeA" parent="Decoration" instance=ExtResource("14_jlqo2")]
+position = Vector2(201, 192)
+
+[node name="Gravestone" parent="Decoration" instance=ExtResource("15_r0ens")]
+position = Vector2(144, 208)
+scale = Vector2(0.25, 0.25)
+
+[node name="Platform9" type="Sprite2D" parent="Decoration"]
+position = Vector2(1559, 454)
+texture = ExtResource("17_qeayf")
+
+[node name="Platform6" type="Sprite2D" parent="Decoration"]
+position = Vector2(1619, 672)
+texture = ExtResource("16_64ym6")
+
+[node name="Platform7" type="Sprite2D" parent="Decoration"]
+position = Vector2(1821, 935)
+texture = ExtResource("3_0nwmr")
+
+[node name="Platform8" type="Sprite2D" parent="Decoration"]
+position = Vector2(1672, 1116)
+texture = ExtResource("6_jvbn5")
+
+[node name="LightOn2" parent="Decoration" instance=ExtResource("12_vw04w")]
+position = Vector2(1607, 922)
+
+[node name="Fence" parent="Decoration" instance=ExtResource("18_egfum")]
+position = Vector2(1566, 985)
+
+[node name="HouseD" parent="Decoration" instance=ExtResource("19_3r1d4")]
+position = Vector2(1801, 882)
+
+[node name="Heel" parent="Decoration" instance=ExtResource("20_r6gkg")]
+position = Vector2(1727, 703)
+
+[node name="TreeB2" parent="Decoration" instance=ExtResource("13_xutgs")]
+position = Vector2(1673, 502)
+
+[node name="TreeC" parent="Decoration" instance=ExtResource("20_25agb")]
+position = Vector2(1729, 138)
+
+[node name="TreeE" parent="Decoration" instance=ExtResource("21_5p5aj")]
+position = Vector2(1841, 144)
+
+[node name="Swing" parent="Decoration" instance=ExtResource("23_owusg")]
+position = Vector2(1825, 317)
+
+[node name="HouseC2" parent="Decoration" instance=ExtResource("11_ib2j8")]
+position = Vector2(1598, 261)
+scale = Vector2(0.25, 0.25)
+
+[node name="AnimatedCharacter" parent="." instance=ExtResource("3_o5r71")]
+position = Vector2(960, 665)
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -269.0
+offset_right = 81.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" parent="Options" instance=ExtResource("1_ylyyu")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../OptionsButton")
+text = "Start Game"
+
+[node name="OptionsButton" parent="Options" instance=ExtResource("1_ylyyu")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../ControllsButton")
+text = "Options"
+
+[node name="ControllsButton" parent="Options" instance=ExtResource("1_ylyyu")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+text = "Controlls"
+
+[node name="CreditsButton" parent="Options" instance=ExtResource("1_ylyyu")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ControllsButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+text = "Credits"
+
+[node name="ExitButton" parent="Options" instance=ExtResource("1_ylyyu")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../CreditsButton")
+text = "Exit"
+
+[node name="ConfirmationDialog" parent="." instance=ExtResource("3_fwdlk")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

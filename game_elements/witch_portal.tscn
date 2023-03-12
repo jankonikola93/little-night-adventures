@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceg5mjbxam0mx"]
+
+[ext_resource type="PackedScene" uid="uid://0r44knmtspjp" path="res://game_elements/spawn_position.tscn" id="1_f4p5s"]
+[ext_resource type="PackedScene" uid="uid://ecf4t8cxde4a" path="res://characters/enemies/witch.tscn" id="2_lkr6t"]
+[ext_resource type="PackedScene" uid="uid://iyxg85cm4a1x" path="res://effects/portal.tscn" id="3_mf6p1"]
+
+[node name="WitchPortal" instance=ExtResource("1_f4p5s")]
+element_to_spawn = ExtResource("2_lkr6t")
+direction = -1
+spawn_time = 1.5
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+scale = Vector2(2.9, 3)
+
+[node name="Portal" parent="." index="2" instance=ExtResource("3_mf6p1")]

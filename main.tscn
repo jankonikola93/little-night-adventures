@@ -1,0 +1,127 @@
+[gd_scene load_steps=21 format=3 uid="uid://cncf2ilmhy8y2"]
+
+[ext_resource type="Texture2D" uid="uid://o8qfv57wao1v" path="res://assets/backgrounds/night-sky/Sky.png" id="1_c5set"]
+[ext_resource type="Texture2D" uid="uid://yac5ngreowh" path="res://assets/backgrounds/night-sky/BG_Decor.png" id="2_p76om"]
+[ext_resource type="Texture2D" uid="uid://b7upe3dav58rs" path="res://assets/backgrounds/night-sky/Middle_Decor.png" id="3_tqifn"]
+[ext_resource type="PackedScene" uid="uid://b24oqg4ky162r" path="res://platforms/platform_gray_c_right.tscn" id="4_dteu0"]
+[ext_resource type="PackedScene" uid="uid://bwt406t06w1or" path="res://platforms/platform_gray_a_right.tscn" id="4_gy14b"]
+[ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="5_kmbk8"]
+[ext_resource type="PackedScene" uid="uid://pjlqcmcvycro" path="res://characters/player/player.tscn" id="6_sb2q8"]
+[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="6_y81oc"]
+[ext_resource type="PackedScene" uid="uid://7okemg3g1gw6" path="res://platforms/platform_black_b.tscn" id="8_lk3af"]
+[ext_resource type="PackedScene" uid="uid://ecf4t8cxde4a" path="res://characters/enemies/witch.tscn" id="9_gvep4"]
+[ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="9_rnode"]
+[ext_resource type="PackedScene" uid="uid://0r44knmtspjp" path="res://game_elements/spawn_position.tscn" id="9_rwl3v"]
+[ext_resource type="PackedScene" uid="uid://8wi0um4bjwrv" path="res://objects/fence.tscn" id="12_6lthh"]
+[ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="12_bhfwi"]
+[ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="13_b7qu0"]
+[ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="14_fjna2"]
+[ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="15_1upqu"]
+[ext_resource type="PackedScene" uid="uid://by6ivurdlda07" path="res://objects/house_c.tscn" id="16_0jjfj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_urjvc"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jmri8"]
+normal = Vector2(1, 0)
+
+[node name="Main" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Level"]
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="Level/ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Level/ParallaxBackground/ParallaxLayer1"]
+position = Vector2(960, 540)
+texture = ExtResource("1_c5set")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Level/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Level/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(960, 540)
+texture = ExtResource("2_p76om")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Level/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Level/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(960, 540)
+texture = ExtResource("3_tqifn")
+
+[node name="TopBoundary" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/TopBoundary"]
+shape = SubResource("WorldBoundaryShape2D_urjvc")
+
+[node name="LeftBoundary" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LeftBoundary"]
+shape = SubResource("WorldBoundaryShape2D_jmri8")
+
+[node name="Platforms" type="Node2D" parent="Level"]
+
+[node name="Platform4" parent="Level/Platforms" instance=ExtResource("4_dteu0")]
+position = Vector2(153, 719)
+
+[node name="Platform1" parent="Level/Platforms" instance=ExtResource("4_gy14b")]
+position = Vector2(227, 979)
+
+[node name="Platform2" parent="Level/Platforms" instance=ExtResource("5_kmbk8")]
+position = Vector2(876, 868)
+
+[node name="Platform6" parent="Level/Platforms" instance=ExtResource("5_kmbk8")]
+position = Vector2(3412, 1001)
+
+[node name="Platform3" parent="Level/Platforms" instance=ExtResource("6_y81oc")]
+position = Vector2(1571, 528)
+
+[node name="Platform5" parent="Level/Platforms" instance=ExtResource("8_lk3af")]
+position = Vector2(2497, 804)
+
+[node name="SpikesPlatform1" parent="Level/Platforms" instance=ExtResource("9_rnode")]
+position = Vector2(3210, 574)
+
+[node name="SpikesPlatform2" parent="Level/Platforms" instance=ExtResource("9_rnode")]
+position = Vector2(3634, 574)
+spikes_direction = 1
+
+[node name="Ropes" type="Node2D" parent="Level"]
+
+[node name="Light" parent="Level" instance=ExtResource("15_1upqu")]
+position = Vector2(725, 670)
+
+[node name="HouseC" parent="Level" instance=ExtResource("16_0jjfj")]
+position = Vector2(2561, 353)
+scale = Vector2(0.8, 0.8)
+
+[node name="Fence" parent="Level" instance=ExtResource("12_6lthh")]
+position = Vector2(876, 648)
+scale = Vector2(0.8, 0.8)
+
+[node name="Enemies" type="Node2D" parent="Level"]
+
+[node name="SpawnPosition" parent="Level/Enemies" instance=ExtResource("9_rwl3v")]
+position = Vector2(1775, 311)
+element_to_spawn = ExtResource("9_gvep4")
+direction = -1
+
+[node name="Wraith1" parent="Level/Enemies" instance=ExtResource("12_bhfwi")]
+position = Vector2(872, 580)
+wait_time = 0.5
+patrol_length = 240
+
+[node name="BlackFlake1" parent="Level/Enemies" instance=ExtResource("13_b7qu0")]
+position = Vector2(429, 810)
+
+[node name="Spinner1" parent="Level/Enemies" instance=ExtResource("14_fjna2")]
+position = Vector2(237, 394)
+
+[node name="Player" parent="." instance=ExtResource("6_sb2q8")]
+position = Vector2(94, 743)

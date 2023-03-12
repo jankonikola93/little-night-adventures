@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://iyxg85cm4a1x"]
+
+[ext_resource type="Texture2D" uid="uid://bkba18p5lm7qy" path="res://assets/materials/effect_4.png" id="1_8uyy1"]
+
+[sub_resource type="Curve" id="Curve_hdoq2"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -353.455), 0.0, 0.0, 0, 0, Vector2(1, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tskm3"]
+curve = SubResource("Curve_hdoq2")
+
+[sub_resource type="Gradient" id="Gradient_pj5gn"]
+offsets = PackedFloat32Array(0, 0.472393)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcmed"]
+gradient = SubResource("Gradient_pj5gn")
+
+[sub_resource type="Curve" id="Curve_cpqnp"]
+max_value = 2.0
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(1, 0.472727), -4.8268, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7e3sx"]
+curve = SubResource("Curve_cpqnp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_74dnd"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -200.0
+angular_velocity_max = -200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_curve = SubResource("CurveTexture_tskm3")
+scale_curve = SubResource("CurveTexture_7e3sx")
+color = Color(0.894118, 0, 0.835294, 1)
+color_ramp = SubResource("GradientTexture1D_gcmed")
+
+[node name="Portal" type="GPUParticles2D"]
+process_mode = 3
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_74dnd")
+texture = ExtResource("1_8uyy1")

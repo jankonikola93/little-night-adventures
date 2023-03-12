@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1xj74qyhio33"]
+
+[ext_resource type="Script" path="res://ui/levels_menu.gd" id="1_8d3qv"]
+[ext_resource type="PackedScene" uid="uid://dcl1flgbokjiy" path="res://ui/background.tscn" id="1_og7xc"]
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="3_qni4c"]
+[ext_resource type="PackedScene" uid="uid://cvvgn740wypg5" path="res://ui/main_menu_button.tscn" id="4_xb7hk"]
+
+[node name="LevelsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8d3qv")
+
+[node name="Background" parent="." instance=ExtResource("1_og7xc")]
+layout_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(900, 650)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -325.0
+offset_right = 430.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme = ExtResource("3_qni4c")
+columns = 5
+
+[node name="MainMenuButton" parent="." instance=ExtResource("4_xb7hk")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.918519
+anchor_right = 0.5
+anchor_bottom = 0.918519
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ScrollContainer/GridContainer/LevelButton" to="ScrollContainer/GridContainer/LevelButton" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19956" to="ScrollContainer/GridContainer/@LevelButton@19956" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19957" to="ScrollContainer/GridContainer/@LevelButton@19957" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19958" to="ScrollContainer/GridContainer/@LevelButton@19958" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19959" to="ScrollContainer/GridContainer/@LevelButton@19959" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19960" to="ScrollContainer/GridContainer/@LevelButton@19960" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19961" to="ScrollContainer/GridContainer/@LevelButton@19961" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19962" to="ScrollContainer/GridContainer/@LevelButton@19962" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19963" to="ScrollContainer/GridContainer/@LevelButton@19963" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19964" to="ScrollContainer/GridContainer/@LevelButton@19964" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19965" to="ScrollContainer/GridContainer/@LevelButton@19965" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19966" to="ScrollContainer/GridContainer/@LevelButton@19966" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19967" to="ScrollContainer/GridContainer/@LevelButton@19967" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19968" to="ScrollContainer/GridContainer/@LevelButton@19968" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19969" to="ScrollContainer/GridContainer/@LevelButton@19969" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19970" to="ScrollContainer/GridContainer/@LevelButton@19970" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19971" to="ScrollContainer/GridContainer/@LevelButton@19971" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19972" to="ScrollContainer/GridContainer/@LevelButton@19972" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19973" to="ScrollContainer/GridContainer/@LevelButton@19973" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19974" to="ScrollContainer/GridContainer/@LevelButton@19974" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19975" to="ScrollContainer/GridContainer/@LevelButton@19975" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19976" to="ScrollContainer/GridContainer/@LevelButton@19976" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19977" to="ScrollContainer/GridContainer/@LevelButton@19977" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19978" to="ScrollContainer/GridContainer/@LevelButton@19978" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19979" to="ScrollContainer/GridContainer/@LevelButton@19979" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19980" to="ScrollContainer/GridContainer/@LevelButton@19980" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19981" to="ScrollContainer/GridContainer/@LevelButton@19981" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19982" to="ScrollContainer/GridContainer/@LevelButton@19982" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19983" to="ScrollContainer/GridContainer/@LevelButton@19983" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19984" to="ScrollContainer/GridContainer/@LevelButton@19984" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19985" to="ScrollContainer/GridContainer/@LevelButton@19985" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19986" to="ScrollContainer/GridContainer/@LevelButton@19986" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19987" to="ScrollContainer/GridContainer/@LevelButton@19987" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19988" to="ScrollContainer/GridContainer/@LevelButton@19988" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19989" to="ScrollContainer/GridContainer/@LevelButton@19989" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19990" to="ScrollContainer/GridContainer/@LevelButton@19990" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19991" to="ScrollContainer/GridContainer/@LevelButton@19991" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19992" to="ScrollContainer/GridContainer/@LevelButton@19992" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19993" to="ScrollContainer/GridContainer/@LevelButton@19993" method="_on_pressed" flags=18]
+[connection signal="pressed" from="ScrollContainer/GridContainer/@LevelButton@19994" to="ScrollContainer/GridContainer/@LevelButton@19994" method="_on_pressed" flags=18]

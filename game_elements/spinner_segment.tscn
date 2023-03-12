@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyeq0tcniq3wb"]
+
+[ext_resource type="Texture2D" uid="uid://vqf04ng13ixm" path="res://assets/characters/enemies/4.png" id="1_leijx"]
+[ext_resource type="Script" path="res://game_elements/spinner_segment.gd" id="2_a16tm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l0te"]
+radius = 70.0
+
+[sub_resource type="Animation" id="Animation_ch1i8"]
+resource_name = "rotate_clockwise"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_jqoj3"]
+resource_name = "rotate_counterclockwise"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_migjd"]
+_data = {
+"rotate_clockwise": SubResource("Animation_ch1i8"),
+"rotate_counterclockwise": SubResource("Animation_jqoj3")
+}
+
+[node name="SpinnerSegment" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_leijx")
+script = ExtResource("2_a16tm")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_8l0te")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_migjd")
+}

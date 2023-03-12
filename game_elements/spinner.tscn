@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlnc478601ls5"]
+
+[ext_resource type="PackedScene" uid="uid://cyeq0tcniq3wb" path="res://game_elements/spinner_segment.tscn" id="1_chwjw"]
+[ext_resource type="Script" path="res://game_elements/spinner.gd" id="1_d28mp"]
+
+[sub_resource type="Animation" id="Animation_ddihx"]
+resource_name = "rotate_clockwise"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_x0xjx"]
+resource_name = "rotate_counterclockwise"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8grn5"]
+_data = {
+"rotate_clockwise": SubResource("Animation_ddihx"),
+"rotate_counterclockwise": SubResource("Animation_x0xjx")
+}
+
+[node name="Spinner" type="Node2D"]
+script = ExtResource("1_d28mp")
+
+[node name="Segments" type="Node2D" parent="."]
+
+[node name="SpinnerSegment1" parent="Segments" instance=ExtResource("1_chwjw")]
+
+[node name="SpinnerSegment2" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 28)
+
+[node name="SpinnerSegment3" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 56)
+
+[node name="SpinnerSegment4" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 84)
+
+[node name="SpinnerSegment5" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 112)
+
+[node name="SpinnerSegment6" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 140)
+
+[node name="SpinnerSegment7" parent="Segments" instance=ExtResource("1_chwjw")]
+position = Vector2(0, 168)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8grn5")
+}

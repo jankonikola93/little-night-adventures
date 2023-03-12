@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://kbh8yljifvem"]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_6k6c4"]
+[ext_resource type="PackedScene" uid="uid://vjcsuxbospnk" path="res://ui/life_indicator.tscn" id="1_ovb61"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6k6c4")
+
+[node name="LifeBar" type="HBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 175.0
+offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Life1" parent="LifeBar" instance=ExtResource("1_ovb61")]
+layout_mode = 2
+
+[node name="Life2" parent="LifeBar" instance=ExtResource("1_ovb61")]
+layout_mode = 2
+
+[node name="Life3" parent="LifeBar" instance=ExtResource("1_ovb61")]
+layout_mode = 2

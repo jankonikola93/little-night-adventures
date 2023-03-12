@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8s3g403hbava"]
+
+[ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_0w4b5"]
+[ext_resource type="Texture2D" uid="uid://dmoyim2txk8q5" path="res://assets/platforms/13.png" id="2_vuecm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ri1"]
+size = Vector2(523, 39)
+
+[node name="PlatformGrayE" instance=ExtResource("1_0w4b5")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_vuecm")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, -30)
+shape = SubResource("RectangleShape2D_c6ri1")
+one_way_collision = true

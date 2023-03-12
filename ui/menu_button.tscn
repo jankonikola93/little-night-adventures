@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5rswdpirdwyv"]
+
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="1_0wosl"]
+
+[node name="MenuButton" type="Button"]
+offset_right = 163.0
+offset_bottom = 41.0
+theme = ExtResource("1_0wosl")
+text = "Button Text"
+flat = true

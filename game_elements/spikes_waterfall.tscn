@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpgn0n3q3056n"]
+
+[ext_resource type="PackedScene" uid="uid://0r44knmtspjp" path="res://game_elements/spawn_position.tscn" id="1_dbndx"]
+[ext_resource type="PackedScene" uid="uid://dinmrdde5niah" path="res://game_elements/falling_spikes.tscn" id="2_3w3vk"]
+
+[node name="SpikesWaterfall" instance=ExtResource("1_dbndx")]
+element_to_spawn = ExtResource("2_3w3vk")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+scale = Vector2(30, 1)

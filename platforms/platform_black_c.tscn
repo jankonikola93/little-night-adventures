@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmvb5vwvxack7"]
+
+[ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_fxtde"]
+[ext_resource type="Texture2D" uid="uid://gmwqpmy3vrj3" path="res://assets/platforms/8.png" id="2_dvcja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0llw"]
+size = Vector2(232, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td2s2"]
+size = Vector2(133, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulnsg"]
+size = Vector2(20, 40)
+
+[node name="PlatformBlackC" instance=ExtResource("1_fxtde")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_dvcja")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(70, -218)
+shape = SubResource("RectangleShape2D_s0llw")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-113.5, -182)
+shape = SubResource("RectangleShape2D_td2s2")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(-36, -208)
+shape = SubResource("RectangleShape2D_ulnsg")

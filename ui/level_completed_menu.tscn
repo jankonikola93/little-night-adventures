@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://clcpxbmxu62fb"]
+
+[ext_resource type="Texture2D" uid="uid://cmwa5qxovadjn" path="res://assets/ui/EmptyBox2.png" id="1_0y22c"]
+[ext_resource type="Script" path="res://ui/level_completed_menu.gd" id="1_w4d5m"]
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="2_xj41k"]
+[ext_resource type="PackedScene" uid="uid://2gjakg0fxcj8" path="res://ui/level_menu_button.tscn" id="4_dbwww"]
+[ext_resource type="Texture2D" uid="uid://b0xlfva37g74g" path="res://assets/characters/player/Defaultview-big.png" id="4_hd0ex"]
+[ext_resource type="PackedScene" uid="uid://cws7uq0uul1f6" path="res://ui/play_button.tscn" id="6_oa8kj"]
+
+[node name="LevelCompletedMenu" type="Popup"]
+process_mode = 2
+transparent_bg = true
+size = Vector2i(408, 500)
+script = ExtResource("1_w4d5m")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 408.0
+offset_bottom = 500.0
+texture = ExtResource("1_0y22c")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme = ExtResource("2_xj41k")
+theme_override_font_sizes/font_size = 40
+text = "Level Completed"
+horizontal_alignment = 1
+
+[node name="PlayerImage" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -120.0
+offset_right = 74.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hd0ex")
+
+[node name="Buttons" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = 68.0
+offset_right = 66.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="LevelMenuButton" parent="Background/Buttons" instance=ExtResource("4_dbwww")]
+layout_mode = 2
+
+[node name="PlayButton" parent="Background/Buttons" instance=ExtResource("6_oa8kj")]
+layout_mode = 2
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup" flags=18]
+[connection signal="pressed" from="Background/Buttons/PlayButton" to="." method="_on_play_button_pressed"]

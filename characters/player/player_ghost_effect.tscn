@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://krx564hsbeeo"]
+
+[ext_resource type="Texture2D" uid="uid://bofa3427wu888" path="res://assets/characters/player/SpriteSheet.png" id="1_n2k6l"]
+[ext_resource type="Script" path="res://characters/player/player_ghost_effect.gd" id="2_gc0jm"]
+
+[node name="PlayerGhostEffect" type="Sprite2D"]
+process_mode = 3
+z_index = -1
+texture = ExtResource("1_n2k6l")
+hframes = 6
+vframes = 3
+frame = 6
+script = ExtResource("2_gc0jm")

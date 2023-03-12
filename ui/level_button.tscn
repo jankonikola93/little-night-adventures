@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=3 uid="uid://har38xtpij35"]
+
+[ext_resource type="Texture2D" uid="uid://b7p6rqqlnml0w" path="res://assets/ui/LvlBox.png" id="1_d6f68"]
+[ext_resource type="Texture2D" uid="uid://bv2hregmq16pc" path="res://assets/ui/LvlBoxFocused.png" id="2_8vysk"]
+[ext_resource type="Texture2D" uid="uid://2srgjufkft0q" path="res://assets/ui/LockLvlBoxFocused.png" id="2_mmlfj"]
+[ext_resource type="Texture2D" uid="uid://npwalgtifqkh" path="res://assets/ui/LockLvlBox.png" id="2_wly6c"]
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="3_me83x"]
+[ext_resource type="Script" path="res://ui/level_button.gd" id="3_y1t8x"]
+[ext_resource type="Texture2D" uid="uid://dxbh8wfjhjgs0" path="res://assets/ui/1StarLvlBox.png" id="5_0gtmc"]
+[ext_resource type="Texture2D" uid="uid://bql8btooc15l7" path="res://assets/ui/2StarLvlBox.png" id="6_gyhi5"]
+[ext_resource type="Texture2D" uid="uid://csbipg0kocmmy" path="res://assets/ui/3StarLvlBox.png" id="7_w85ad"]
+[ext_resource type="Texture2D" uid="uid://c2fxsbgn3ngyt" path="res://assets/ui/1StarLvlBoxFocused.png" id="8_uhns7"]
+[ext_resource type="Texture2D" uid="uid://xavr3t32fhtk" path="res://assets/ui/2StarLvlBoxFocused.png" id="9_lytsf"]
+[ext_resource type="Texture2D" uid="uid://cphmmg33uxn4r" path="res://assets/ui/3StarLvlBoxFocused.png" id="10_ckmkv"]
+
+[node name="LevelButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+disabled = true
+texture_normal = ExtResource("2_wly6c")
+texture_hover = ExtResource("2_mmlfj")
+texture_disabled = ExtResource("2_wly6c")
+texture_focused = ExtResource("2_mmlfj")
+script = ExtResource("3_y1t8x")
+unlocked_texture = ExtResource("1_d6f68")
+one_star_texture = ExtResource("5_0gtmc")
+two_stars_texture = ExtResource("6_gyhi5")
+three_stars_texture = ExtResource("7_w85ad")
+unlocked_focused_texture = ExtResource("2_8vysk")
+one_star_focused_texture = ExtResource("8_uhns7")
+two_stars_focused_texture = ExtResource("9_lytsf")
+three_stars_focused_texture = ExtResource("10_ckmkv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -4.5
+offset_right = -20.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_me83x")
+theme_override_font_sizes/font_size = 20
+text = "Level 1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lr3qq4cvup2h"]
+
+[ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_0hmti"]
+[ext_resource type="Texture2D" uid="uid://ko8wef3uhoxk" path="res://assets/platforms/10.png" id="2_i41po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pnix"]
+size = Vector2(201, 20)
+
+[node name="PlatformBlackDLeft" instance=ExtResource("1_0hmti")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_i41po")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(6.5, -124)
+shape = SubResource("RectangleShape2D_0pnix")
+one_way_collision = true

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vjcsuxbospnk"]
+
+[ext_resource type="Texture2D" uid="uid://cv1vcjkdgygc5" path="res://assets/characters/player/Defaultview.png" id="1_ar8tg"]
+
+[node name="LifeIndicator" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ar8tg")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://l4aprsf82kcv"]
+
+[ext_resource type="Texture2D" uid="uid://bi1d3rylt8b2b" path="res://assets/other/2.png" id="1_7i5fq"]
+
+[node name="HouseB" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_7i5fq")

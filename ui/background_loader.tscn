@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs3p7we7g7a5o"]
+
+[ext_resource type="Script" path="res://ui/background_loader.gd" id="1_drxf0"]
+[ext_resource type="PackedScene" uid="uid://l0xclwhdxqyk" path="res://ui/animated_character.tscn" id="1_uo781"]
+
+[node name="BackgroundLoader" type="Control"]
+visible = false
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_drxf0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedCharacter" parent="." instance=ExtResource("1_uo781")]
+position = Vector2(960, 900)
+scale = Vector2(3, 3)

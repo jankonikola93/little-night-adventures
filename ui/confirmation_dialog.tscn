@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://clf20f7cjfcdm"]
+
+[ext_resource type="Texture2D" uid="uid://c674r4e1ncoch" path="res://assets/ui/EmptyBox.png" id="1_6d16a"]
+[ext_resource type="Script" path="res://ui/confirmation_dialog.gd" id="1_qwj5q"]
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="2_kvup1"]
+[ext_resource type="FontFile" uid="uid://8cp1lrbuomtx" path="res://assets/fonts/BerkshireSwash-Regular.ttf" id="3_uaegp"]
+[ext_resource type="Texture2D" uid="uid://df7hvmwasdp1p" path="res://assets/ui/YesBtn.png" id="5_jok2e"]
+[ext_resource type="Texture2D" uid="uid://bc6rjhffrkac5" path="res://assets/ui/YesBtn_2.png" id="6_d43py"]
+[ext_resource type="Texture2D" uid="uid://dc1edoaatkaxe" path="res://assets/ui/CloseBtn.png" id="6_hflph"]
+[ext_resource type="Texture2D" uid="uid://jqdg7nljtjlh" path="res://assets/ui/CloseBtn_2.png" id="8_fd5g3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2ryy"]
+font = ExtResource("3_uaegp")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="ConfirmationDialog" type="Popup"]
+transparent_bg = true
+size = Vector2i(457, 258)
+script = ExtResource("1_qwj5q")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6d16a")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme = ExtResource("2_kvup1")
+text = "Message"
+label_settings = SubResource("LabelSettings_d2ryy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -108.0
+offset_right = 114.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Ok" type="TextureButton" parent="Background/Buttons"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../No")
+texture_normal = ExtResource("5_jok2e")
+texture_hover = ExtResource("6_d43py")
+texture_focused = ExtResource("6_d43py")
+
+[node name="No" type="TextureButton" parent="Background/Buttons"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ok")
+texture_normal = ExtResource("6_hflph")
+texture_hover = ExtResource("8_fd5g3")
+texture_focused = ExtResource("8_fd5g3")
+
+[connection signal="pressed" from="Background/Buttons/Ok" to="." method="_on_OkButton_pressed"]
+[connection signal="pressed" from="Background/Buttons/No" to="." method="_on_NoButton_pressed"]

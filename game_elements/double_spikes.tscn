@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b521projopifo"]
+
+[ext_resource type="Texture2D" uid="uid://b5ofy8yuly1ef" path="res://assets/other/21.png" id="1_hwag6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w8eca"]
+radius = 82.0
+height = 418.0
+
+[node name="DoubleSpikes" type="AnimatableBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w8eca")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_hwag6")

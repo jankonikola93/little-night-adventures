@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://06ewm7wtj0v4"]
+
+[ext_resource type="PackedScene" uid="uid://0r44knmtspjp" path="res://game_elements/spawn_position.tscn" id="1_s2v21"]
+[ext_resource type="Script" path="res://game_elements/oscilator.gd" id="2_gub1k"]
+[ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="2_nh7ii"]
+[ext_resource type="PackedScene" uid="uid://iyxg85cm4a1x" path="res://effects/portal.tscn" id="4_otn45"]
+
+[node name="Oscilator" instance=ExtResource("1_s2v21")]
+script = ExtResource("2_gub1k")
+amount = -1
+frequency = 3.0
+amplitude = 400.0
+speed = 300.0
+element_to_spawn = ExtResource("2_nh7ii")
+direction = -1
+spawn_time = 0.5
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+scale = Vector2(35.1, 1)
+
+[node name="Portal" parent="." index="2" instance=ExtResource("4_otn45")]
+scale = Vector2(0.8, 0.8)

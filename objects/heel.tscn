@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ytrrjbc4of8"]
+
+[ext_resource type="Texture2D" uid="uid://b5uklmn4h7vrq" path="res://assets/other/7.png" id="1_ybr7u"]
+
+[node name="Heel" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ybr7u")

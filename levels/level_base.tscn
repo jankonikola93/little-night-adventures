@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://cjfs3xrhuoq36"]
+
+[ext_resource type="Texture2D" uid="uid://o8qfv57wao1v" path="res://assets/backgrounds/night-sky/Sky.png" id="1_p51wn"]
+[ext_resource type="Script" path="res://levels/level_base.gd" id="1_tqllu"]
+[ext_resource type="PackedScene" uid="uid://kbh8yljifvem" path="res://ui/hud.tscn" id="2_o2lat"]
+[ext_resource type="Texture2D" uid="uid://yac5ngreowh" path="res://assets/backgrounds/night-sky/BG_Decor.png" id="2_pu865"]
+[ext_resource type="Texture2D" uid="uid://b7upe3dav58rs" path="res://assets/backgrounds/night-sky/Middle_Decor.png" id="3_qc1un"]
+[ext_resource type="PackedScene" uid="uid://pjlqcmcvycro" path="res://characters/player/player.tscn" id="4_66rwn"]
+[ext_resource type="PackedScene" uid="uid://b8ql6arp5v7ik" path="res://ui/pause_menu.tscn" id="6_hguaf"]
+[ext_resource type="PackedScene" uid="uid://cx618wve07s3r" path="res://ui/game_over_menu.tscn" id="8_eg7i4"]
+[ext_resource type="PackedScene" uid="uid://dhebhu8dlcfrq" path="res://ui/try_again_menu.tscn" id="8_x0p1u"]
+[ext_resource type="PackedScene" uid="uid://clcpxbmxu62fb" path="res://ui/level_completed_menu.tscn" id="10_k7a5w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jvyq"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nvu1s"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uy5mr"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj41a"]
+size = Vector2(50, 20)
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_tqllu")
+
+[node name="HUD" parent="." instance=ExtResource("2_o2lat")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(960, 540)
+texture = ExtResource("1_p51wn")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(960, 540)
+texture = ExtResource("2_pu865")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(960, 540)
+texture = ExtResource("3_qc1un")
+
+[node name="TopBoundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary"]
+shape = SubResource("WorldBoundaryShape2D_5jvyq")
+
+[node name="LeftBoundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary"]
+shape = SubResource("WorldBoundaryShape2D_nvu1s")
+
+[node name="RightBoundary" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary"]
+shape = SubResource("WorldBoundaryShape2D_uy5mr")
+
+[node name="EndingArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingArea"]
+shape = SubResource("RectangleShape2D_aj41a")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("4_66rwn")]
+position = Vector2(153, 186)
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_hguaf")]
+
+[node name="TryAgainMenu" parent="." instance=ExtResource("8_x0p1u")]
+
+[node name="GameOverMenu" parent="." instance=ExtResource("8_eg7i4")]
+
+[node name="LevelCompletedMenu" parent="." instance=ExtResource("10_k7a5w")]
+
+[connection signal="body_entered" from="EndingArea" to="." method="_on_ending_area_body_entered"]
+[connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="popup_hide" from="TryAgainMenu" to="." method="_on_try_again_menu_popup_hide"]
+[connection signal="popup_hide" from="GameOverMenu" to="." method="_on_game_over_menu_popup_hide"]
+[connection signal="popup_hide" from="LevelCompletedMenu" to="." method="_on_level_completed_menu_popup_hide"]
