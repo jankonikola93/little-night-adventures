@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvcvxcy6v70o7"]
+[gd_scene load_steps=16 format=3 uid="uid://bvcvxcy6v70o7"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_o3c8u"]
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_7rugc"]
@@ -15,13 +15,22 @@
 [ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="9_naaen"]
 [ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="11_jnwwv"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6blug"]
+normal = Vector2(0, 1)
+
 [node name="Level6" instance=ExtResource("1_o3c8u")]
 level_number = 6
 
 [node name="RightBoundary" parent="." index="4"]
 position = Vector2(18200, 0)
 
-[node name="EndingArea" parent="." index="5"]
+[node name="TopBoundary2" type="StaticBody2D" parent="." index="5"]
+position = Vector2(18200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_6blug")
+
+[node name="EndingArea" parent="." index="6"]
 position = Vector2(18150, 576)
 
 [node name="Platform30" parent="Platforms" index="0" instance=ExtResource("2_7rugc")]

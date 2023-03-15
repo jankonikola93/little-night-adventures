@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="4_y8jou"]
 [ext_resource type="PackedScene" uid="uid://bfo06tmyywnac" path="res://platforms/platform_gray_d_right.tscn" id="5_4pn1b"]
 [ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="6_hkcn6"]
-[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="6_nkc7o"]
+[ext_resource type="PackedScene" uid="uid://1b70u2pc4rk4" path="res://platforms/platform_black_a.tscn" id="6_nkc7o"]
 [ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="7_bwml5"]
 [ext_resource type="PackedScene" uid="uid://cmvb5vwvxack7" path="res://platforms/platform_black_c.tscn" id="7_pqjr0"]
 [ext_resource type="PackedScene" uid="uid://cpgn0n3q3056n" path="res://game_elements/spikes_waterfall.tscn" id="8_766yu"]
