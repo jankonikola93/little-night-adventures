@@ -88,7 +88,7 @@ func _on_try_again_menu_popup_hide():
 func _on_level_completed_menu_popup_hide():
 	player.queue_free()
 	get_tree().paused = false
-	if GameData.levels[level_number + 1] > 0:
+	if GameData.levels[level_number + 1] > -1:
 		BackgroundLoader.load_scene("res://levels/level_%s.tscn" % (level_number + 1), 1)
 	else:
 		BackgroundLoader.load_scene("res://levels/level_%s.tscn" % level_number, 1)
