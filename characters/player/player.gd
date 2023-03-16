@@ -55,19 +55,30 @@ func set_camera(limit: Vector4):
 	camera.limit_bottom = limit.w
 
 
+func reset():
+	is_dashing = false
+	dash_counter = 0
+	coyote_counter = 0
+	jump_counter = 0
+	jump_buffer_counter = 0
+	can_dash = true
+	current_state = State.IDLE
+	velocity = Vector2.ZERO
+
+
 func _die():
 	emit_signal("dead")
 
 
 func _physics_process(delta: float):
-	if is_on_rope and rope_segment != null:
-		if Input.is_action_just_pressed("jump"):
-			jump_buffer_counter = jump_buffer_time
-			coyote_counter = 1
-			is_on_rope = false
-			return
-		global_position = rope_segment.global_position
-		return
+#	if is_on_rope and rope_segment != null:
+#		if Input.is_action_just_pressed("jump"):
+#			jump_buffer_counter = jump_buffer_time
+#			coyote_counter = 1
+#			is_on_rope = false
+#			return
+#		global_position = rope_segment.global_position
+#		return
 	
 	if floor_raycast.is_colliding():
 		_add_jump_dust_effect(floor_raycast.get_collision_point())

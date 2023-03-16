@@ -9,7 +9,6 @@ func set_lifebar(lifes: int):
 	if lifes == 0:
 		life_indicator = lifebar.get_children()[0]
 	else:
-
 		life_indicator = lifebar.get_children()[-lifebar.get_child_count() + lifes]
 	life_indicator.hide()
 	_add_dust_explosion(life_indicator.global_position)

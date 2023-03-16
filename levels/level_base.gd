@@ -76,6 +76,7 @@ func _on_game_over_menu_popup_hide():
 func _on_try_again_menu_popup_hide():
 	get_tree().call_group("remove_on_try_on", "queue_free")
 	player.global_position = player_start_position
+	player.reset()
 	get_tree().paused = false
 
 
