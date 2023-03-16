@@ -11,6 +11,7 @@ extends Node2D
 @onready var try_again_menu := $TryAgainMenu
 @onready var level_completed_menu := $LevelCompletedMenu
 var player_lifes := 3
+var player_already_dead = false
 var turned_lights := 0
 
 
@@ -58,6 +59,9 @@ func _unhandled_input(event):
 
 
 func _on_player_dead():
+	if player_already_dead:
+		return
+	player_already_dead = true
 	get_tree().paused = true
 	player_lifes -= 1
 	hud.set_lifebar(player_lifes)
@@ -77,6 +81,7 @@ func _on_try_again_menu_popup_hide():
 	get_tree().call_group("remove_on_try_on", "queue_free")
 	player.global_position = player_start_position
 	player.reset()
+	player_already_dead = false
 	get_tree().paused = false
 
 
