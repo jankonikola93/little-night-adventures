@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qfsmaa4wm67m"]
+[gd_scene load_steps=14 format=3 uid="uid://qfsmaa4wm67m"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_f48wy"]
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_yqixq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="4_kpr0s"]
 [ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="5_4ojsu"]
 [ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="5_bs1a0"]
+[ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="6_mmfxd"]
 [ext_resource type="PackedScene" uid="uid://ceg5mjbxam0mx" path="res://game_elements/witch_portal.tscn" id="7_t74sr"]
 [ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="8_7e1ad"]
 [ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="9_nxvky"]
@@ -117,6 +118,15 @@ position = Vector2(15583, 659)
 
 [node name="Platform26" parent="Platforms" index="28" instance=ExtResource("2_yqixq")]
 position = Vector2(16107, 659)
+
+[node name="Light1" parent="Lights" index="0" instance=ExtResource("6_mmfxd")]
+position = Vector2(737, 843)
+
+[node name="Light2" parent="Lights" index="1" instance=ExtResource("6_mmfxd")]
+position = Vector2(7664, 756)
+
+[node name="Light3" parent="Lights" index="2" instance=ExtResource("6_mmfxd")]
+position = Vector2(15573, 610)
 
 [node name="Spinner1" parent="Enemies" index="0" instance=ExtResource("3_rctlw")]
 position = Vector2(426, 617)
