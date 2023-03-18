@@ -29,3 +29,7 @@ func _on_confirmation_dialog_confirmed():
 
 func _on_start_button_pressed():
 	BackgroundLoader.load_scene("res://ui/levels_menu.tscn")
+
+
+func _on_controlls_button_pressed():
+	BackgroundLoader.load_scene("res://ui/controls_menu.tscn")

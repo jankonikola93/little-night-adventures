@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://i6iajdsg4u4y"]
+
+[ext_resource type="Theme" uid="uid://8vgy8e1pp2an" path="res://themas/default.tres" id="1_v3ij4"]
+
+[node name="ControlLabel" type="Label"]
+offset_right = 123.0
+offset_bottom = 44.0
+theme = ExtResource("1_v3ij4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Comand Text"

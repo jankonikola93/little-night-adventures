@@ -203,5 +203,6 @@ text = "Exit"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/ControllsButton" to="." method="_on_controlls_button_pressed"]
 [connection signal="pressed" from="Options/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

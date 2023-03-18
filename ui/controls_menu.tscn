@@ -1,0 +1,188 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxb1tjjuoiu8q"]
+
+[ext_resource type="Shader" path="res://effects/blur.gdshader" id="1_bsp4y"]
+[ext_resource type="Script" path="res://ui/controls_menu.gd" id="1_fe0tk"]
+[ext_resource type="Texture2D" uid="uid://o8qfv57wao1v" path="res://assets/backgrounds/night-sky/Sky.png" id="1_nwn21"]
+[ext_resource type="Texture2D" uid="uid://b7upe3dav58rs" path="res://assets/backgrounds/night-sky/Middle_Decor.png" id="2_kskmh"]
+[ext_resource type="Texture2D" uid="uid://dfabudhfw4478" path="res://assets/ui/XboxOne_Diagram.png" id="2_ty06x"]
+[ext_resource type="Texture2D" uid="uid://yac5ngreowh" path="res://assets/backgrounds/night-sky/BG_Decor.png" id="3_7rtq5"]
+[ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="4_pv7nt"]
+[ext_resource type="Texture2D" uid="uid://b3b6ecdfn22d" path="res://assets/backgrounds/night-sky/Foreground.png" id="5_nn625"]
+[ext_resource type="PackedScene" uid="uid://i6iajdsg4u4y" path="res://ui/control_label.tscn" id="8_txs3l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08fre"]
+shader = ExtResource("1_bsp4y")
+shader_parameter/lod = 1.5
+
+[node name="ControlsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fe0tk")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_nwn21")
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_kskmh")
+
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_7rtq5")
+
+[node name="Platform1" parent="Background" instance=ExtResource("4_pv7nt")]
+position = Vector2(256, 1021)
+
+[node name="Platform2" parent="Background" instance=ExtResource("4_pv7nt")]
+position = Vector2(781, 1021)
+
+[node name="Platform3" parent="Background" instance=ExtResource("4_pv7nt")]
+position = Vector2(1306, 1021)
+
+[node name="Platform4" parent="Background" instance=ExtResource("4_pv7nt")]
+position = Vector2(1831, 1021)
+
+[node name="TextureRect4" type="TextureRect" parent="Background"]
+material = SubResource("ShaderMaterial_08fre")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_nn625")
+
+[node name="XBox" type="Control" parent="."]
+custom_minimum_size = Vector2(1200, 1080)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="XBoxController" type="TextureRect" parent="XBox"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 392.0
+offset_right = 1698.0
+offset_bottom = 1332.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ty06x")
+metadata/_edit_lock_ = true
+
+[node name="NavigateLine" type="Line2D" parent="XBox"]
+points = PackedVector2Array(434, 615, 434, 893, 348, 893)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="NavigateLabel" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 868.0
+offset_right = 343.0
+offset_bottom = 912.0
+text = "Navigate"
+metadata/_edit_lock_ = true
+
+[node name="JumpLine" type="Line2D" parent="XBox"]
+points = PackedVector2Array(788, 649, 788, 720, 959, 720)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="JumpLabel" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 697.0
+offset_right = 1087.0
+offset_bottom = 741.0
+text = "Jump"
+metadata/_edit_lock_ = true
+
+[node name="DashLine1" type="Line2D" parent="XBox"]
+points = PackedVector2Array(472, 452, 472, 358, 330, 358)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="DashLabel1" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 335.0
+offset_right = 373.0
+offset_bottom = 379.0
+text = "Dash"
+metadata/_edit_lock_ = true
+
+[node name="DashLine2" type="Line2D" parent="XBox"]
+points = PackedVector2Array(749, 452, 749, 358, 898, 358)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="DashLabel2" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 335.0
+offset_right = 1024.0
+offset_bottom = 379.0
+text = "Dash"
+metadata/_edit_lock_ = true
+
+[node name="DashLine3" type="Line2D" parent="XBox"]
+points = PackedVector2Array(839, 605, 839, 636, 945, 636)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="DashLabel3" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 611.0
+offset_right = 1072.0
+offset_bottom = 655.0
+text = "Dash"
+metadata/_edit_lock_ = true
+
+[node name="PauseLine" type="Line2D" parent="XBox"]
+points = PackedVector2Array(561, 589, 561, 247, 404, 247)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="PauseLabel" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 223.0
+offset_right = 396.0
+offset_bottom = 267.0
+text = "Back/Pause"
+metadata/_edit_lock_ = true
+
+[node name="UINavigationLine" type="Line2D" parent="XBox"]
+points = PackedVector2Array(519, 714, 519, 893, 601, 893)
+width = 3.0
+metadata/_edit_lock_ = true
+
+[node name="UINavigationLabel" parent="XBox" instance=ExtResource("8_txs3l")]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 868.0
+offset_right = 845.0
+offset_bottom = 912.0
+text = "Menu Navigation"
+metadata/_edit_lock_ = true
