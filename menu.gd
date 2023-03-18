@@ -10,6 +10,7 @@ const MIDDLE_CLOUDS_SPEED = 15
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	confirmation_dialog.hide()
 	start_game_button.grab_focus()
 

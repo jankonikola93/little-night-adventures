@@ -15,3 +15,8 @@ func _ready():
 		grid_container.add_child(level_button)
 		i += 1
 	grid_container.get_children()[0].grab_focus()
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"):
+		BackgroundLoader.load_scene("res://menu.tscn")
