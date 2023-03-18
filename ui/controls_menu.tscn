@@ -96,11 +96,11 @@ metadata/_edit_lock_ = true
 
 [node name="NavigateLabel" parent="XBox" instance=ExtResource("8_txs3l")]
 layout_mode = 0
-offset_left = 220.0
+offset_left = 196.0
 offset_top = 868.0
 offset_right = 343.0
 offset_bottom = 912.0
-text = "Navigate"
+text = "Movement"
 metadata/_edit_lock_ = true
 
 [node name="JumpLine" type="Line2D" parent="XBox"]
