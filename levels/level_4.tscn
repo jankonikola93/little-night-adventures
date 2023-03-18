@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="8_eux5k"]
 [ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="9_ws0dm"]
 [ext_resource type="PackedScene" uid="uid://7okemg3g1gw6" path="res://platforms/platform_black_b.tscn" id="9_yisy3"]
-[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="10_v783c"]
+[ext_resource type="PackedScene" uid="uid://1b70u2pc4rk4" path="res://platforms/platform_black_a.tscn" id="10_v783c"]
 [ext_resource type="PackedScene" uid="uid://lr3qq4cvup2h" path="res://platforms/platform_black_d_left.tscn" id="11_slv31"]
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="12_nbw6x"]
 [ext_resource type="PackedScene" uid="uid://b3r7co36snufs" path="res://characters/enemies/spider.tscn" id="12_pqpxx"]
@@ -221,44 +221,41 @@ position = Vector2(15857, 708)
 [node name="DoubleSpikes7" parent="Enemies" index="19" instance=ExtResource("9_ws0dm")]
 position = Vector2(16349, 529)
 
-[node name="Spider1" parent="Enemies" index="20" instance=ExtResource("12_pqpxx")]
-position = Vector2(7264, 198)
-
-[node name="Spider2" parent="Enemies" index="21" instance=ExtResource("12_pqpxx")]
+[node name="Spider2" parent="Enemies" index="20" instance=ExtResource("12_pqpxx")]
 position = Vector2(14120, 441)
 
-[node name="Spider3" parent="Enemies" index="22" instance=ExtResource("12_pqpxx")]
+[node name="Spider3" parent="Enemies" index="21" instance=ExtResource("12_pqpxx")]
 position = Vector2(15850, 197)
 
-[node name="Spider4" parent="Enemies" index="23" instance=ExtResource("12_pqpxx")]
+[node name="Spider4" parent="Enemies" index="22" instance=ExtResource("12_pqpxx")]
 position = Vector2(16338, 197)
 
-[node name="Spider5" parent="Enemies" index="24" instance=ExtResource("12_pqpxx")]
+[node name="Spider5" parent="Enemies" index="23" instance=ExtResource("12_pqpxx")]
 position = Vector2(16097, 144)
 
-[node name="BlackFlake1" parent="Enemies" index="25" instance=ExtResource("14_f0283")]
+[node name="BlackFlake1" parent="Enemies" index="24" instance=ExtResource("14_f0283")]
 position = Vector2(8662, 496)
 
-[node name="BlackFlake2" parent="Enemies" index="26" instance=ExtResource("14_f0283")]
+[node name="BlackFlake2" parent="Enemies" index="25" instance=ExtResource("14_f0283")]
 position = Vector2(8662, 840)
 
-[node name="BlackFlake3" parent="Enemies" index="27" instance=ExtResource("14_f0283")]
+[node name="BlackFlake3" parent="Enemies" index="26" instance=ExtResource("14_f0283")]
 position = Vector2(8662, 672)
 
-[node name="BlackFlake4" parent="Enemies" index="28" instance=ExtResource("14_f0283")]
+[node name="BlackFlake4" parent="Enemies" index="27" instance=ExtResource("14_f0283")]
 position = Vector2(8662, 320)
 
-[node name="BlackFlake5" parent="Enemies" index="29" instance=ExtResource("14_f0283")]
+[node name="BlackFlake5" parent="Enemies" index="28" instance=ExtResource("14_f0283")]
 position = Vector2(8662, 320)
 
-[node name="BlackFlake6" parent="Enemies" index="30" instance=ExtResource("14_f0283")]
+[node name="BlackFlake6" parent="Enemies" index="29" instance=ExtResource("14_f0283")]
 position = Vector2(8902, 496)
 
-[node name="BlackFlake7" parent="Enemies" index="31" instance=ExtResource("14_f0283")]
+[node name="BlackFlake7" parent="Enemies" index="30" instance=ExtResource("14_f0283")]
 position = Vector2(8902, 840)
 
-[node name="BlackFlake8" parent="Enemies" index="32" instance=ExtResource("14_f0283")]
+[node name="BlackFlake8" parent="Enemies" index="31" instance=ExtResource("14_f0283")]
 position = Vector2(8902, 672)
 
-[node name="BlackFlake9" parent="Enemies" index="33" instance=ExtResource("14_f0283")]
+[node name="BlackFlake9" parent="Enemies" index="32" instance=ExtResource("14_f0283")]
 position = Vector2(8902, 320)
