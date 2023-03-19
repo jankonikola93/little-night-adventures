@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfo06tmyywnac" path="res://platforms/platform_gray_d_right.tscn" id="3_s22fr"]
 [ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="4_qwg68"]
 [ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="5_8250h"]
-[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="5_gdbv8"]
+[ext_resource type="PackedScene" uid="uid://1b70u2pc4rk4" path="res://platforms/platform_black_a.tscn" id="5_gdbv8"]
 [ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="6_dhv11"]
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="7_lkimh"]
 [ext_resource type="PackedScene" uid="uid://7okemg3g1gw6" path="res://platforms/platform_black_b.tscn" id="8_iq1oe"]

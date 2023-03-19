@@ -62,7 +62,7 @@ func reset():
 	jump_counter = 0
 	jump_buffer_counter = 0
 	can_dash = true
-	current_state = State.IDLE
+	_change_state(State.IDLE)
 	velocity = Vector2.ZERO
 
 
