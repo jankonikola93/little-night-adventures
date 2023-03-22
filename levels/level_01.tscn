@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj1jd1d7m2kf7"]
+[gd_scene load_steps=15 format=3 uid="uid://cj1jd1d7m2kf7"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_bl4oe"]
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_ha45i"]
@@ -14,12 +14,21 @@
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="10_auv4e"]
 [ext_resource type="PackedScene" uid="uid://b3r7co36snufs" path="res://characters/enemies/spider.tscn" id="10_b8fw7"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kastn"]
+normal = Vector2(0, 1)
+
 [node name="Level01" instance=ExtResource("1_bl4oe")]
 
 [node name="RightBoundary" parent="." index="4"]
 position = Vector2(12000, 0)
 
-[node name="EndingArea" parent="." index="5"]
+[node name="TopBoundary2" type="StaticBody2D" parent="." index="5"]
+position = Vector2(12000, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_kastn")
+
+[node name="EndingArea" parent="." index="6"]
 position = Vector2(12069, 486)
 
 [node name="CollisionShape2D" parent="EndingArea" index="0"]
