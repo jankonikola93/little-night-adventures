@@ -21,7 +21,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbnu3"]
 normal = Vector2(0, 1)
 
-[node name="Level05" instance=ExtResource("1_d05ef")]
+[node name="Level5" instance=ExtResource("1_d05ef")]
 level_number = 5
 
 [node name="RightBoundary" parent="." index="4"]
