@@ -1,1 +1,1 @@
-extends BaseTextureButton
+extends TextureButton

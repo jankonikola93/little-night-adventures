@@ -1,4 +1,4 @@
-extends BaseTextureButton
+extends TextureButton
 
 
 func _on_pressed():
