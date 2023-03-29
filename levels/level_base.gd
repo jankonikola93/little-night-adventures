@@ -85,6 +85,7 @@ func _on_try_again_menu_popup_hide():
 	get_tree().paused = false
 
 
+
 func _on_level_completed_menu_popup_hide():
 	player.queue_free()
 	get_tree().paused = false
@@ -99,7 +100,7 @@ func _on_ending_area_body_entered(body: Player):
 		return
 	get_tree().paused = true
 	_save_game_data()
-	level_completed_menu.popup_centered()
+	level_completed_menu.popup_with_stars(turned_lights)
 
 
 func _on_light_turned_on():

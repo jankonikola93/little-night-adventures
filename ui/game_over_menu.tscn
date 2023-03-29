@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx618wve07s3r"]
+[gd_scene load_steps=8 format=3 uid="uid://cx618wve07s3r"]
 
 [ext_resource type="Texture2D" uid="uid://cmwa5qxovadjn" path="res://assets/ui/EmptyBox2.png" id="1_6wi0x"]
 [ext_resource type="Script" path="res://ui/game_over_menu.gd" id="1_v4jcp"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bwjlvpwdxlvjk" path="res://assets/characters/player/ClosedEyes.png" id="4_slw5n"]
 [ext_resource type="Texture2D" uid="uid://cynd8hs74ydex" path="res://assets/ui/RestartBtn.png" id="5_6dtvj"]
 [ext_resource type="Texture2D" uid="uid://h1myoygy6pb" path="res://assets/ui/RestartBtn_2.png" id="6_4vkmu"]
-[ext_resource type="Script" path="res://ui/base_texture_button.gd" id="7_thhyi"]
 
 [node name="GameOverMenu" type="Popup"]
 process_mode = 2
@@ -70,7 +69,6 @@ layout_mode = 2
 texture_normal = ExtResource("5_6dtvj")
 texture_hover = ExtResource("6_4vkmu")
 texture_focused = ExtResource("6_4vkmu")
-script = ExtResource("7_thhyi")
 
 [connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
 [connection signal="pressed" from="Background/Buttons/RestartButton" to="." method="_on_restart_button_pressed"]
