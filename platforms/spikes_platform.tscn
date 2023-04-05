@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjpmbjj7kesaj"]
+[gd_scene load_steps=11 format=3 uid="uid://bjpmbjj7kesaj"]
 
 [ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_0ckaw"]
 [ext_resource type="Script" path="res://platforms/spikes_platform.gd" id="2_5u7wr"]
 [ext_resource type="Texture2D" uid="uid://c5410d254g8fv" path="res://assets/platforms/24.png" id="2_7lkpl"]
+[ext_resource type="Shader" path="res://effects/fade.gdshader" id="3_t3ap7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0y2ve"]
+resource_local_to_scene = true
+shader = ExtResource("3_t3ap7")
+shader_parameter/fade = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxkxw"]
 size = Vector2(202, 20)
@@ -56,8 +62,10 @@ size = Vector2(196, 20)
 rotation = 3.14159
 collision_mask = 0
 script = ExtResource("2_5u7wr")
+spikes_direction = 0
 
 [node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_0y2ve")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_7lkpl")
 flip_v = true
@@ -67,7 +75,7 @@ position = Vector2(7.47998e-05, -28)
 shape = SubResource("RectangleShape2D_wxkxw")
 one_way_collision = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_dj0mh")
 }
