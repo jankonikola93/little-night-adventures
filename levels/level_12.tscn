@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvnlggppumot6"]
+[gd_scene load_steps=6 format=3 uid="uid://dvnlggppumot6"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_cjqug"]
 [ext_resource type="PackedScene" uid="uid://1b70u2pc4rk4" path="res://platforms/platform_black_a.tscn" id="2_ekp2o"]
 [ext_resource type="PackedScene" uid="uid://bfo06tmyywnac" path="res://platforms/platform_gray_d_right.tscn" id="3_kp0h8"]
 [ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="4_gw56t"]
+[ext_resource type="PackedScene" uid="uid://06ewm7wtj0v4" path="res://game_elements/oscilator.tscn" id="5_yy51g"]
 
 [node name="Level12" instance=ExtResource("1_cjqug")]
 level_number = 12
@@ -17,17 +18,24 @@ position = Vector2(227, 635)
 [node name="Platform5" parent="Platforms" index="1" instance=ExtResource("2_ekp2o")]
 position = Vector2(2192, 635)
 
-[node name="Platform2" parent="Platforms" index="2" instance=ExtResource("3_kp0h8")]
+[node name="Platform7" parent="Platforms" index="2" instance=ExtResource("2_ekp2o")]
+position = Vector2(3424, 635)
+
+[node name="Platform2" parent="Platforms" index="3" instance=ExtResource("3_kp0h8")]
 position = Vector2(750, 623)
 pulsing = true
 
-[node name="Platform3" parent="Platforms" index="3" instance=ExtResource("3_kp0h8")]
+[node name="Platform3" parent="Platforms" index="4" instance=ExtResource("3_kp0h8")]
 position = Vector2(1215, 623)
 pulsing = true
 start_state = 1
 
-[node name="Platform4" parent="Platforms" index="4" instance=ExtResource("3_kp0h8")]
+[node name="Platform4" parent="Platforms" index="5" instance=ExtResource("3_kp0h8")]
 position = Vector2(1682, 623)
+pulsing = true
+
+[node name="Platform6" parent="Platforms" index="6" instance=ExtResource("3_kp0h8")]
+position = Vector2(2810, 623)
 pulsing = true
 
 [node name="DoubleSpikes1" parent="Enemies" index="0" instance=ExtResource("4_gw56t")]
@@ -38,3 +46,17 @@ position = Vector2(1204, 711)
 
 [node name="DoubleSpikes3" parent="Enemies" index="2" instance=ExtResource("4_gw56t")]
 position = Vector2(1670, 711)
+
+[node name="Oscilator1" parent="Enemies" index="3" instance=ExtResource("5_yy51g")]
+position = Vector2(2394, 962)
+vertical_oscilations = true
+spawn_time = 1.0
+
+[node name="Oscilator2" parent="Enemies" index="4" instance=ExtResource("5_yy51g")]
+position = Vector2(2928, 110)
+vertical_oscilations = true
+direction = 1
+spawn_time = 1.0
+
+[node name="Player" parent="." index="9"]
+position = Vector2(2143, 510)

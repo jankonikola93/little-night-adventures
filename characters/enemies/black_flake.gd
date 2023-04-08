@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const DISTANCE_CORRECTION := 5
-@export_enum('PATROL: 1', 'OSCILATE: 2') var behavior := 1
+@export_enum('PATROL: 1', 'OSCILATE: 2', 'OSCILATE_VERTICAL: 3') var behavior := 1
 @export var speed : float = 300.0
 @export var acceleration : float = 25.0
 @export var wait_time : float = 1.0
@@ -40,12 +40,21 @@ func _physics_process(delta: float):
 	match behavior:
 		1: _patrol()
 		2: _oscilate(delta)
+		3: _oscilate_vertical(delta)
 
 
 func _oscilate(delta: float):
 	time += delta
 	var v = Vector2(direction * speed, 0)
 	v.y = sin(time * frequency) * amplitude
+	velocity = v
+	move_and_slide()
+
+
+func _oscilate_vertical(delta: float):
+	time += delta
+	var v = Vector2(0, direction * speed)
+	v.x = sin(time * frequency) * amplitude
 	velocity = v
 	move_and_slide()
 

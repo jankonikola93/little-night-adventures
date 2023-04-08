@@ -2,10 +2,12 @@ class_name Oscilator
 extends SpawnPosition
 
 const OSCILATE_BEHAVIOR := 2
+const OSCILATE_VERTICAL_BEHAVIOR := 3
 @export_range(0, 100) var amount := 0
 @export_range(0, 100) var frequency := 3.0
 @export_range(1, 1000) var amplitude := 400.0
 @export var speed : float = 300.0
+@export var vertical_oscilations : bool = false
 var counter := 0
 
 
@@ -18,7 +20,10 @@ func _spawn_element():
 	if element.has_method("set_direction"):
 		element.set_direction(direction)
 	if element.has_method("set_behavior"):
-		element.set_behavior(OSCILATE_BEHAVIOR)
+		if vertical_oscilations:
+			element.set_behavior(OSCILATE_VERTICAL_BEHAVIOR)
+		else:
+			element.set_behavior(OSCILATE_BEHAVIOR)
 	if element.has_method("connect_visible_notifier"):
 		element.connect_visible_notifier()
 	element.speed = speed

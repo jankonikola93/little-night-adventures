@@ -11,6 +11,7 @@ amount = -1
 frequency = 3.0
 amplitude = 400.0
 speed = 300.0
+vertical_oscilations = false
 element_to_spawn = ExtResource("2_nh7ii")
 direction = -1
 spawn_time = 0.5
