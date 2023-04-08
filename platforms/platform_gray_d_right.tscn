@@ -1,17 +1,121 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfo06tmyywnac"]
+[gd_scene load_steps=10 format=3 uid="uid://bfo06tmyywnac"]
 
 [ext_resource type="PackedScene" uid="uid://dxron50xitv4r" path="res://platforms/platform.tscn" id="1_xs882"]
 [ext_resource type="Texture2D" uid="uid://kne8tlm8r3au" path="res://assets/platforms/9.png" id="2_0osi2"]
+[ext_resource type="Shader" path="res://effects/fade.gdshader" id="2_oj0uf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ve4cv"]
+resource_local_to_scene = true
+shader = ExtResource("2_oj0uf")
+shader_parameter/fade = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu2ae"]
 size = Vector2(229, 20)
 
+[sub_resource type="Animation" id="Animation_8pr3b"]
+resource_name = "pulse1"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [null, 0.3, 0.9, 0.9, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_t2wjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jtvxb"]
+resource_name = "pulse2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.9, 0.9, 0.0, 0.3, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrxip"]
+_data = {
+"RESET": SubResource("Animation_t2wjm"),
+"pulse1": SubResource("Animation_8pr3b"),
+"pulse2": SubResource("Animation_jtvxb")
+}
+
 [node name="PlatformGrayDRight" instance=ExtResource("1_xs882")]
 
 [node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_ve4cv")
 texture = ExtResource("2_0osi2")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-11, -28)
 shape = SubResource("RectangleShape2D_tu2ae")
 one_way_collision = true
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_rrxip")
+}
