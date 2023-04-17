@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvnlggppumot6"]
+[gd_scene load_steps=16 format=3 uid="uid://dvnlggppumot6"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_cjqug"]
-[ext_resource type="PackedScene" uid="uid://1b70u2pc4rk4" path="res://platforms/platform_black_a.tscn" id="2_ekp2o"]
+[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="2_ekp2o"]
 [ext_resource type="PackedScene" uid="uid://bfo06tmyywnac" path="res://platforms/platform_gray_d_right.tscn" id="3_kp0h8"]
 [ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="4_g08ff"]
 [ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="4_gw56t"]
@@ -15,13 +15,22 @@
 [ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="9_l4iim"]
 [ext_resource type="PackedScene" uid="uid://cpgn0n3q3056n" path="res://game_elements/spikes_waterfall.tscn" id="11_8kkn1"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o41ye"]
+normal = Vector2(0, 1)
+
 [node name="Level12" instance=ExtResource("1_cjqug")]
 level_number = 12
 
 [node name="RightBoundary" parent="." index="4"]
 position = Vector2(15900, 0)
 
-[node name="EndingArea" parent="." index="5"]
+[node name="TopBoundary2" type="StaticBody2D" parent="." index="5"]
+position = Vector2(15900, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_o41ye")
+
+[node name="EndingArea" parent="." index="6"]
 position = Vector2(15777, 955)
 
 [node name="Platform1" parent="Platforms" index="0" instance=ExtResource("2_ekp2o")]

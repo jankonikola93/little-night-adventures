@@ -1,0 +1,400 @@
+[gd_scene load_steps=18 format=3 uid="uid://bf0t62eqefe5q"]
+
+[ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_hua4c"]
+[ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_jq0cd"]
+[ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="3_boyuu"]
+[ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="3_mrrfk"]
+[ext_resource type="PackedScene" uid="uid://bfo06tmyywnac" path="res://platforms/platform_gray_d_right.tscn" id="4_18k8a"]
+[ext_resource type="PackedScene" uid="uid://06ewm7wtj0v4" path="res://game_elements/oscilator.tscn" id="4_t6nd0"]
+[ext_resource type="PackedScene" uid="uid://bustesdtauhgv" path="res://platforms/platform_gray_c_left.tscn" id="5_2uqrv"]
+[ext_resource type="PackedScene" uid="uid://b24oqg4ky162r" path="res://platforms/platform_gray_c_right.tscn" id="6_6ucn4"]
+[ext_resource type="PackedScene" uid="uid://bcvwkpwcy748" path="res://platforms/platform_gray_g_right.tscn" id="7_extkb"]
+[ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="7_letds"]
+[ext_resource type="PackedScene" path="res://platforms/platform_black_a.tscn" id="8_cl8ty"]
+[ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="9_i23te"]
+[ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="10_hicu3"]
+[ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="10_vk3u1"]
+[ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="13_ssc05"]
+[ext_resource type="PackedScene" uid="uid://cpgn0n3q3056n" path="res://game_elements/spikes_waterfall.tscn" id="15_ejhe6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g46yw"]
+normal = Vector2(0, 1)
+
+[node name="Level13" instance=ExtResource("1_hua4c")]
+level_number = 13
+
+[node name="RightBoundary" parent="." index="4"]
+position = Vector2(20700, 0)
+
+[node name="TopBoundary2" type="StaticBody2D" parent="." index="5"]
+position = Vector2(20700, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary2" index="0"]
+shape = SubResource("WorldBoundaryShape2D_g46yw")
+
+[node name="EndingArea" parent="." index="6"]
+position = Vector2(20660, 648)
+
+[node name="Platform1" parent="Platforms" index="0" instance=ExtResource("2_jq0cd")]
+position = Vector2(261, 743)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_jq0cd")]
+position = Vector2(785, 743)
+pulsing = true
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_jq0cd")]
+position = Vector2(1309, 743)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_jq0cd")]
+position = Vector2(1833, 743)
+pulsing = true
+
+[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_jq0cd")]
+position = Vector2(2357, 743)
+
+[node name="Platform6" parent="Platforms" index="5" instance=ExtResource("3_boyuu")]
+position = Vector2(3404, 1023)
+
+[node name="Platform7" parent="Platforms" index="6" instance=ExtResource("4_18k8a")]
+position = Vector2(4144, 865)
+pulsing = true
+
+[node name="Platform8" parent="Platforms" index="7" instance=ExtResource("4_18k8a")]
+position = Vector2(4664, 705)
+pulsing = true
+start_state = 1
+
+[node name="Platform9" parent="Platforms" index="8" instance=ExtResource("4_18k8a")]
+position = Vector2(5168, 513)
+pulsing = true
+
+[node name="Platform10" parent="Platforms" index="9" instance=ExtResource("5_2uqrv")]
+position = Vector2(5716, 740)
+
+[node name="Platform11" parent="Platforms" index="10" instance=ExtResource("6_6ucn4")]
+position = Vector2(6033, 740)
+
+[node name="Platform34" parent="Platforms" index="11" instance=ExtResource("5_2uqrv")]
+position = Vector2(10828, 787)
+
+[node name="Platform35" parent="Platforms" index="12" instance=ExtResource("6_6ucn4")]
+position = Vector2(11145, 787)
+
+[node name="Platform12" parent="Platforms" index="13" instance=ExtResource("4_18k8a")]
+position = Vector2(6616, 513)
+pulsing = true
+
+[node name="Platform14" parent="Platforms" index="14" instance=ExtResource("4_18k8a")]
+position = Vector2(7752, 865)
+pulsing = true
+
+[node name="Platform13" parent="Platforms" index="15" instance=ExtResource("4_18k8a")]
+position = Vector2(7176, 705)
+pulsing = true
+start_state = 1
+
+[node name="Platform15" parent="Platforms" index="16" instance=ExtResource("2_jq0cd")]
+position = Vector2(8498, 944)
+
+[node name="Platform16" parent="Platforms" index="17" instance=ExtResource("2_jq0cd")]
+position = Vector2(9022, 944)
+pulsing = true
+
+[node name="Platform17" parent="Platforms" index="18" instance=ExtResource("2_jq0cd")]
+position = Vector2(9546, 944)
+pulsing = true
+
+[node name="Platform18" parent="Platforms" index="19" instance=ExtResource("2_jq0cd")]
+position = Vector2(10070, 944)
+pulsing = true
+start_state = 1
+
+[node name="Platform19" parent="Platforms" index="20" instance=ExtResource("2_jq0cd")]
+position = Vector2(10593, 944)
+pulsing = true
+start_state = 1
+
+[node name="Platform20" parent="Platforms" index="21" instance=ExtResource("2_jq0cd")]
+position = Vector2(11117, 944)
+pulsing = true
+
+[node name="Platform21" parent="Platforms" index="22" instance=ExtResource("2_jq0cd")]
+position = Vector2(11641, 944)
+pulsing = true
+
+[node name="Platform22" parent="Platforms" index="23" instance=ExtResource("2_jq0cd")]
+position = Vector2(12165, 944)
+pulsing = true
+start_state = 1
+
+[node name="Platform23" parent="Platforms" index="24" instance=ExtResource("2_jq0cd")]
+position = Vector2(12689, 944)
+pulsing = true
+start_state = 1
+
+[node name="Platform24" parent="Platforms" index="25" instance=ExtResource("2_jq0cd")]
+position = Vector2(13213, 944)
+
+[node name="Platform25" parent="Platforms" index="26" instance=ExtResource("7_extkb")]
+position = Vector2(13884, 807)
+
+[node name="Platform26" parent="Platforms" index="27" instance=ExtResource("7_extkb")]
+position = Vector2(14350, 807)
+
+[node name="Platform27" parent="Platforms" index="28" instance=ExtResource("7_extkb")]
+position = Vector2(15139, 807)
+
+[node name="Platform28" parent="Platforms" index="29" instance=ExtResource("7_extkb")]
+position = Vector2(15591, 807)
+
+[node name="Platform29" parent="Platforms" index="30" instance=ExtResource("8_cl8ty")]
+position = Vector2(14723, 553)
+pulsing = true
+
+[node name="Platform30" parent="Platforms" index="31" instance=ExtResource("8_cl8ty")]
+position = Vector2(15979, 553)
+pulsing = true
+
+[node name="Platform36" parent="Platforms" index="32" instance=ExtResource("8_cl8ty")]
+position = Vector2(17251, 1025)
+
+[node name="SpikesPlatform1" parent="Platforms" index="33" instance=ExtResource("9_i23te")]
+position = Vector2(16482, 346)
+
+[node name="SpikesPlatform2" parent="Platforms" index="34" instance=ExtResource("9_i23te")]
+position = Vector2(16482, 664)
+spikes_direction = 1
+
+[node name="SpikesPlatform3" parent="Platforms" index="35" instance=ExtResource("9_i23te")]
+position = Vector2(16982, 346)
+
+[node name="SpikesPlatform4" parent="Platforms" index="36" instance=ExtResource("9_i23te")]
+position = Vector2(16982, 664)
+spikes_direction = 1
+
+[node name="SpikesPlatform5" parent="Platforms" index="37" instance=ExtResource("9_i23te")]
+position = Vector2(17482, 346)
+
+[node name="SpikesPlatform6" parent="Platforms" index="38" instance=ExtResource("9_i23te")]
+position = Vector2(17482, 664)
+spikes_direction = 1
+
+[node name="SpikesPlatform7" parent="Platforms" index="39" instance=ExtResource("9_i23te")]
+position = Vector2(17982, 346)
+
+[node name="SpikesPlatform8" parent="Platforms" index="40" instance=ExtResource("9_i23te")]
+position = Vector2(17982, 664)
+spikes_direction = 1
+
+[node name="Platform31" parent="Platforms" index="41" instance=ExtResource("3_boyuu")]
+position = Vector2(18698, 1158)
+
+[node name="Platform32" parent="Platforms" index="42" instance=ExtResource("3_boyuu")]
+position = Vector2(19555, 995)
+
+[node name="Platform33" parent="Platforms" index="43" instance=ExtResource("3_boyuu")]
+position = Vector2(20452, 866)
+
+[node name="Light1" parent="Lights" index="0" instance=ExtResource("10_hicu3")]
+position = Vector2(5849, 384)
+
+[node name="Light2" parent="Lights" index="1" instance=ExtResource("10_hicu3")]
+position = Vector2(10937, 429)
+
+[node name="Light3" parent="Lights" index="2" instance=ExtResource("10_hicu3")]
+position = Vector2(17205, 978)
+
+[node name="BlackFlake1" parent="Enemies" index="0" instance=ExtResource("3_mrrfk")]
+position = Vector2(635, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake2" parent="Enemies" index="1" instance=ExtResource("3_mrrfk")]
+position = Vector2(735, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake3" parent="Enemies" index="2" instance=ExtResource("3_mrrfk")]
+position = Vector2(835, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake4" parent="Enemies" index="3" instance=ExtResource("3_mrrfk")]
+position = Vector2(935, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake5" parent="Enemies" index="4" instance=ExtResource("3_mrrfk")]
+position = Vector2(1158, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = -350
+
+[node name="BlackFlake6" parent="Enemies" index="5" instance=ExtResource("3_mrrfk")]
+position = Vector2(1258, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = -350
+
+[node name="BlackFlake7" parent="Enemies" index="6" instance=ExtResource("3_mrrfk")]
+position = Vector2(1358, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = -350
+
+[node name="BlackFlake8" parent="Enemies" index="7" instance=ExtResource("3_mrrfk")]
+position = Vector2(1458, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = -350
+
+[node name="BlackFlake9" parent="Enemies" index="8" instance=ExtResource("3_mrrfk")]
+position = Vector2(1687, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake10" parent="Enemies" index="9" instance=ExtResource("3_mrrfk")]
+position = Vector2(1787, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake11" parent="Enemies" index="10" instance=ExtResource("3_mrrfk")]
+position = Vector2(1887, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="BlackFlake12" parent="Enemies" index="11" instance=ExtResource("3_mrrfk")]
+position = Vector2(1987, 697)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 350
+
+[node name="Oscilator1" parent="Enemies" index="12" instance=ExtResource("4_t6nd0")]
+position = Vector2(2645, 182)
+vertical_oscilations = true
+direction = 1
+spawn_time = 1.0
+
+[node name="Oscilator2" parent="Enemies" index="13" instance=ExtResource("4_t6nd0")]
+position = Vector2(2994, 182)
+vertical_oscilations = true
+direction = 1
+spawn_time = 1.3
+
+[node name="DoubleSpikes1" parent="Enemies" index="14" instance=ExtResource("7_letds")]
+position = Vector2(4134, 559)
+
+[node name="DoubleSpikes6" parent="Enemies" index="15" instance=ExtResource("7_letds")]
+position = Vector2(7742, 559)
+
+[node name="DoubleSpikes7" parent="Enemies" index="16" instance=ExtResource("7_letds")]
+position = Vector2(9027, 1064)
+
+[node name="DoubleSpikes8" parent="Enemies" index="17" instance=ExtResource("7_letds")]
+position = Vector2(9544, 1064)
+
+[node name="DoubleSpikes9" parent="Enemies" index="18" instance=ExtResource("7_letds")]
+position = Vector2(10071, 1064)
+
+[node name="DoubleSpikes10" parent="Enemies" index="19" instance=ExtResource("7_letds")]
+position = Vector2(10593, 1064)
+
+[node name="DoubleSpikes11" parent="Enemies" index="20" instance=ExtResource("7_letds")]
+position = Vector2(11116, 1064)
+
+[node name="DoubleSpikes12" parent="Enemies" index="21" instance=ExtResource("7_letds")]
+position = Vector2(11638, 1064)
+
+[node name="DoubleSpikes13" parent="Enemies" index="22" instance=ExtResource("7_letds")]
+position = Vector2(12165, 1064)
+
+[node name="DoubleSpikes14" parent="Enemies" index="23" instance=ExtResource("7_letds")]
+position = Vector2(12689, 1064)
+
+[node name="DoubleSpikes2" parent="Enemies" index="24" instance=ExtResource("7_letds")]
+position = Vector2(4654, 399)
+
+[node name="DoubleSpikes5" parent="Enemies" index="25" instance=ExtResource("7_letds")]
+position = Vector2(7166, 399)
+
+[node name="DoubleSpikes3" parent="Enemies" index="26" instance=ExtResource("7_letds")]
+position = Vector2(5158, 207)
+
+[node name="DoubleSpikes4" parent="Enemies" index="27" instance=ExtResource("7_letds")]
+position = Vector2(6606, 207)
+
+[node name="Wraith1" parent="Enemies" index="28" instance=ExtResource("10_vk3u1")]
+position = Vector2(9215, 809)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 400
+
+[node name="Wraith2" parent="Enemies" index="29" instance=ExtResource("10_vk3u1")]
+position = Vector2(9349, 809)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 400
+
+[node name="Wraith3" parent="Enemies" index="30" instance=ExtResource("10_vk3u1")]
+position = Vector2(12359, 804)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 400
+
+[node name="Wraith4" parent="Enemies" index="31" instance=ExtResource("10_vk3u1")]
+position = Vector2(12493, 804)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 400
+
+[node name="Oscilator3" parent="Enemies" index="32" instance=ExtResource("4_t6nd0")]
+position = Vector2(11000, 523)
+spawn_time = 0.8
+
+[node name="Oscilator4" parent="Enemies" index="33" instance=ExtResource("4_t6nd0")]
+position = Vector2(11000, 523)
+direction = 1
+spawn_time = 0.8
+
+[node name="Spinner1" parent="Enemies" index="34" instance=ExtResource("13_ssc05")]
+position = Vector2(13815, 779)
+
+[node name="Spinner2" parent="Enemies" index="35" instance=ExtResource("13_ssc05")]
+position = Vector2(13922, 779)
+rotation_direction = 1
+
+[node name="Spinner3" parent="Enemies" index="36" instance=ExtResource("13_ssc05")]
+position = Vector2(14282, 779)
+rotation_direction = 1
+
+[node name="Spinner4" parent="Enemies" index="37" instance=ExtResource("13_ssc05")]
+position = Vector2(14386, 779)
+
+[node name="Spinner5" parent="Enemies" index="38" instance=ExtResource("13_ssc05")]
+position = Vector2(15071, 779)
+
+[node name="Spinner6" parent="Enemies" index="39" instance=ExtResource("13_ssc05")]
+position = Vector2(15176, 779)
+rotation_direction = 1
+
+[node name="Spinner7" parent="Enemies" index="40" instance=ExtResource("13_ssc05")]
+position = Vector2(15522, 779)
+rotation_direction = 1
+
+[node name="Spinner8" parent="Enemies" index="41" instance=ExtResource("13_ssc05")]
+position = Vector2(15627, 779)
+
+[node name="SpikesWaterfall1" parent="Enemies" index="42" instance=ExtResource("15_ejhe6")]
+position = Vector2(19000, 0)
+spawn_time = 0.7
+
+[node name="SpikesWaterfall2" parent="Enemies" index="43" instance=ExtResource("15_ejhe6")]
+position = Vector2(19978, 0)
+spawn_time = 0.9
