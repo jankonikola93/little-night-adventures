@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccnkjybq5ofry"]
+
+[ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_ottlw"]
+[ext_resource type="PackedScene" uid="uid://bwt406t06w1or" path="res://platforms/platform_gray_a_right.tscn" id="2_p7g4r"]
+[ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="3_hmngb"]
+
+[node name="Level14" instance=ExtResource("1_ottlw")]
+level_number = 14
+
+[node name="Platform1" parent="Platforms" index="0" instance=ExtResource("2_p7g4r")]
+position = Vector2(242, 745)
+
+[node name="DoubleSpikes1" parent="Enemies" index="0" instance=ExtResource("3_hmngb")]
+position = Vector2(689, 222)
+should_oscillate = true
+amplitude = 7.0
+
+[node name="DoubleSpikes2" parent="Enemies" index="1" instance=ExtResource("3_hmngb")]
+position = Vector2(689, 967)
+should_oscillate = true
+amplitude = -7.0
