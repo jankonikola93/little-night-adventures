@@ -46,6 +46,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
+playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_4bn3s")
 }

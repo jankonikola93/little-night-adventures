@@ -13,6 +13,7 @@ config_version=5
 config/name="little-night-adventures"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
+run/max_fps=60
 config/icon="res://icon.png"
 
 [autoload]
@@ -114,7 +115,3 @@ pause={
 [physics]
 
 2d/default_gravity=4900.0
-
-[rendering]
-
-renderer/rendering_method="mobile"
