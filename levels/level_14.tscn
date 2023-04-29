@@ -1,14 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccnkjybq5ofry"]
+[gd_scene load_steps=9 format=3 uid="uid://ccnkjybq5ofry"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_ottlw"]
 [ext_resource type="PackedScene" uid="uid://bwt406t06w1or" path="res://platforms/platform_gray_a_right.tscn" id="2_p7g4r"]
+[ext_resource type="PackedScene" uid="uid://dygsiet0m6kqb" path="res://platforms/platform_gray_b.tscn" id="3_1yds2"]
 [ext_resource type="PackedScene" uid="uid://b521projopifo" path="res://game_elements/double_spikes.tscn" id="3_hmngb"]
+[ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="4_1nbs5"]
+[ext_resource type="PackedScene" uid="uid://lr3qq4cvup2h" path="res://platforms/platform_black_d_left.tscn" id="5_ewl60"]
+[ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="5_lr3jf"]
+[ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="7_kum1f"]
 
 [node name="Level14" instance=ExtResource("1_ottlw")]
 level_number = 14
 
+[node name="RightBoundary" parent="." index="4"]
+position = Vector2(17000, 0)
+
 [node name="Platform1" parent="Platforms" index="0" instance=ExtResource("2_p7g4r")]
 position = Vector2(242, 745)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("3_1yds2")]
+position = Vector2(1219, 879)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("4_1nbs5")]
+position = Vector2(2113, 809)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("4_1nbs5")]
+position = Vector2(2637, 809)
+
+[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("4_1nbs5")]
+position = Vector2(3161, 809)
+
+[node name="Platform6" parent="Platforms" index="5" instance=ExtResource("4_1nbs5")]
+position = Vector2(3685, 809)
+
+[node name="Platform7" parent="Platforms" index="6" instance=ExtResource("3_1yds2")]
+position = Vector2(4603, 879)
+
+[node name="Platform8" parent="Platforms" index="7" instance=ExtResource("4_1nbs5")]
+position = Vector2(5922, 809)
+pulsing = true
+
+[node name="Platform9" parent="Platforms" index="8" instance=ExtResource("4_1nbs5")]
+position = Vector2(6446, 809)
+pulsing = true
+start_state = 1
+
+[node name="Platform10" parent="Platforms" index="9" instance=ExtResource("4_1nbs5")]
+position = Vector2(6970, 809)
+pulsing = true
+
+[node name="Platform11" parent="Platforms" index="10" instance=ExtResource("4_1nbs5")]
+position = Vector2(7494, 809)
+pulsing = true
+start_state = 1
+
+[node name="Platform12" parent="Platforms" index="11" instance=ExtResource("5_ewl60")]
+position = Vector2(5250, 948)
 
 [node name="DoubleSpikes1" parent="Enemies" index="0" instance=ExtResource("3_hmngb")]
 position = Vector2(689, 222)
@@ -19,3 +66,97 @@ amplitude = 7.0
 position = Vector2(689, 967)
 should_oscillate = true
 amplitude = -7.0
+
+[node name="DoubleSpikes3" parent="Enemies" index="2" instance=ExtResource("3_hmngb")]
+position = Vector2(2344, 925)
+should_oscillate = true
+amplitude = -3.0
+
+[node name="DoubleSpikes4" parent="Enemies" index="3" instance=ExtResource("3_hmngb")]
+position = Vector2(2344, 323)
+should_oscillate = true
+amplitude = 7.0
+
+[node name="DoubleSpikes7" parent="Enemies" index="4" instance=ExtResource("3_hmngb")]
+position = Vector2(2897, 925)
+should_oscillate = true
+amplitude = -3.0
+
+[node name="DoubleSpikes8" parent="Enemies" index="5" instance=ExtResource("3_hmngb")]
+position = Vector2(2897, 451)
+should_oscillate = true
+amplitude = 4.0
+
+[node name="DoubleSpikes5" parent="Enemies" index="6" instance=ExtResource("3_hmngb")]
+position = Vector2(3457, 925)
+should_oscillate = true
+amplitude = -3.0
+
+[node name="DoubleSpikes6" parent="Enemies" index="7" instance=ExtResource("3_hmngb")]
+position = Vector2(3457, 323)
+should_oscillate = true
+amplitude = 7.0
+
+[node name="DoubleSpikes9" parent="Enemies" index="8" instance=ExtResource("3_hmngb")]
+position = Vector2(6157, 925)
+amplitude = -3.0
+
+[node name="DoubleSpikes10" parent="Enemies" index="9" instance=ExtResource("3_hmngb")]
+position = Vector2(6157, 323)
+should_oscillate = true
+amplitude = 7.0
+
+[node name="DoubleSpikes11" parent="Enemies" index="10" instance=ExtResource("3_hmngb")]
+position = Vector2(6710, 925)
+amplitude = -3.0
+
+[node name="DoubleSpikes12" parent="Enemies" index="11" instance=ExtResource("3_hmngb")]
+position = Vector2(6710, 451)
+should_oscillate = true
+amplitude = 4.0
+
+[node name="DoubleSpikes13" parent="Enemies" index="12" instance=ExtResource("3_hmngb")]
+position = Vector2(7270, 925)
+amplitude = -3.0
+
+[node name="DoubleSpikes14" parent="Enemies" index="13" instance=ExtResource("3_hmngb")]
+position = Vector2(7270, 323)
+should_oscillate = true
+amplitude = 7.0
+
+[node name="Spinner1" parent="Enemies" index="14" instance=ExtResource("5_lr3jf")]
+position = Vector2(1076, 701)
+
+[node name="Spinner3" parent="Enemies" index="15" instance=ExtResource("5_lr3jf")]
+position = Vector2(1076, 701)
+rotation_direction = 1
+
+[node name="Spinner2" parent="Enemies" index="16" instance=ExtResource("5_lr3jf")]
+position = Vector2(1367, 701)
+rotation_direction = 1
+
+[node name="Spinner4" parent="Enemies" index="17" instance=ExtResource("5_lr3jf")]
+position = Vector2(1367, 701)
+
+[node name="Spinner5" parent="Enemies" index="18" instance=ExtResource("5_lr3jf")]
+position = Vector2(4524, 701)
+
+[node name="Spinner6" parent="Enemies" index="19" instance=ExtResource("5_lr3jf")]
+position = Vector2(4524, 701)
+rotation_direction = 1
+
+[node name="Spinner7" parent="Enemies" index="20" instance=ExtResource("5_lr3jf")]
+position = Vector2(4687, 701)
+rotation_direction = 1
+
+[node name="Spinner8" parent="Enemies" index="21" instance=ExtResource("5_lr3jf")]
+position = Vector2(4687, 701)
+
+[node name="Wraith1" parent="Enemies" index="22" instance=ExtResource("7_kum1f")]
+position = Vector2(2896, 672)
+speed = 400.0
+wait_time = 0.3
+patrol_length = 450
+
+[node name="Player" parent="." index="9"]
+position = Vector2(5263, 715)
