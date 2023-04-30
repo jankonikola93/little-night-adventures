@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv7wvlvfvbqcr"]
+
+[ext_resource type="Texture2D" uid="uid://cj2lnq10vo3f6" path="res://assets/other/19.png" id="1_6ncus"]
+
+[node name="SpiderNet" type="Sprite2D"]
+texture = ExtResource("1_6ncus")

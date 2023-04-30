@@ -83,10 +83,14 @@ shape = SubResource("RectangleShape2D_aj41a")
 
 [node name="Lights" type="Node2D" parent="."]
 
+[node name="DecorationsBack" type="Node2D" parent="."]
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_66rwn")]
 position = Vector2(153, 186)
+
+[node name="DecorationsFront" type="Node2D" parent="."]
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_hguaf")]
 
