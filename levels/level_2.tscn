@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hbjs3icse1f8"]
+[gd_scene load_steps=22 format=3 uid="uid://hbjs3icse1f8"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_gf28w"]
 [ext_resource type="PackedScene" uid="uid://b24oqg4ky162r" path="res://platforms/platform_gray_c_right.tscn" id="2_jeas7"]
@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://cv4nipu5rpj1h" path="res://platforms/platform_gray_a_left.tscn" id="12_gl217"]
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="13_lluew"]
 [ext_resource type="PackedScene" uid="uid://b3r7co36snufs" path="res://characters/enemies/spider.tscn" id="13_nhk3v"]
+[ext_resource type="PackedScene" uid="uid://dyw5htsgilltf" path="res://objects/tree_b.tscn" id="14_y6jwf"]
+[ext_resource type="PackedScene" uid="uid://lk5idjtkam73" path="res://objects/tree_c.tscn" id="15_wanhp"]
+[ext_resource type="PackedScene" uid="uid://by6ivurdlda07" path="res://objects/house_c.tscn" id="16_21b8x"]
+[ext_resource type="PackedScene" uid="uid://8wi0um4bjwrv" path="res://objects/fence.tscn" id="17_ylhth"]
 
 [node name="Level2" instance=ExtResource("1_gf28w")]
 level_number = 2
@@ -87,6 +91,26 @@ position = Vector2(6098, 482)
 [node name="Light3" parent="Lights" index="2" instance=ExtResource("13_lluew")]
 position = Vector2(10594, 405)
 
+[node name="TreeB" parent="DecorationsBack" index="0" instance=ExtResource("14_y6jwf")]
+position = Vector2(1365, 563)
+scale = Vector2(1, 1)
+
+[node name="TreeC" parent="DecorationsBack" index="1" instance=ExtResource("15_wanhp")]
+position = Vector2(1655, 537)
+scale = Vector2(1, 1)
+
+[node name="HouseC" parent="DecorationsBack" index="2" instance=ExtResource("16_21b8x")]
+position = Vector2(4566, 332)
+scale = Vector2(0.7, 0.7)
+
+[node name="Fence" parent="DecorationsBack" index="3" instance=ExtResource("17_ylhth")]
+position = Vector2(9692, 385)
+scale = Vector2(0.5, 0.5)
+
+[node name="TreeC2" parent="DecorationsBack" index="4" instance=ExtResource("15_wanhp")]
+position = Vector2(9362, 291)
+scale = Vector2(1, 1)
+
 [node name="Wraith1" parent="Enemies" index="0" instance=ExtResource("5_8250h")]
 position = Vector2(1496, 609)
 
@@ -135,3 +159,7 @@ position = Vector2(5745, 136)
 
 [node name="Spider3" parent="Enemies" index="12" instance=ExtResource("13_nhk3v")]
 position = Vector2(9784, 686)
+
+[node name="Fence2" parent="DecorationsFront" index="0" instance=ExtResource("17_ylhth")]
+position = Vector2(9526, 779)
+scale = Vector2(0.9, 0.9)
