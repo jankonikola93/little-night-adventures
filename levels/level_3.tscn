@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://qfsmaa4wm67m"]
+[gd_scene load_steps=28 format=3 uid="uid://qfsmaa4wm67m"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_47iw0"]
 [ext_resource type="PackedScene" uid="uid://bwt406t06w1or" path="res://platforms/platform_gray_a_right.tscn" id="2_dmeg3"]
@@ -15,12 +15,24 @@
 [ext_resource type="PackedScene" uid="uid://cv4nipu5rpj1h" path="res://platforms/platform_gray_a_left.tscn" id="10_sn8ak"]
 [ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="11_bdjmn"]
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="11_spwbi"]
+[ext_resource type="PackedScene" uid="uid://cv7wvlvfvbqcr" path="res://objects/spider_net.tscn" id="12_te47r"]
+[ext_resource type="PackedScene" uid="uid://dyw5htsgilltf" path="res://objects/tree_b.tscn" id="13_10q4s"]
+[ext_resource type="PackedScene" uid="uid://brwdvkansjqe7" path="res://objects/gravestone.tscn" id="14_oa2su"]
+[ext_resource type="PackedScene" uid="uid://l4aprsf82kcv" path="res://objects/house_b.tscn" id="15_x0m8i"]
+[ext_resource type="PackedScene" uid="uid://bo1iropvfd4d2" path="res://objects/house_a.tscn" id="16_r6fsx"]
+[ext_resource type="PackedScene" uid="uid://b7ytrrjbc4of8" path="res://objects/heel.tscn" id="17_th6e8"]
+[ext_resource type="PackedScene" uid="uid://tkjbn2cl4oc3" path="res://objects/tree_a.tscn" id="17_wsxmn"]
+[ext_resource type="PackedScene" uid="uid://ej63iuqsjmla" path="res://objects/tree_e.tscn" id="19_8ijhu"]
+[ext_resource type="PackedScene" uid="uid://lk5idjtkam73" path="res://objects/tree_c.tscn" id="20_845j5"]
+[ext_resource type="PackedScene" uid="uid://8kr6kahgrwy1" path="res://objects/cemitery.tscn" id="21_6q64p"]
+[ext_resource type="PackedScene" uid="uid://8wi0um4bjwrv" path="res://objects/fence.tscn" id="22_ni5g1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jvyq"]
 normal = Vector2(0, 1)
 
 [node name="Level3" instance=ExtResource("1_47iw0")]
 level_number = 3
+metadata/_edit_vertical_guides_ = []
 
 [node name="TopBoundary2" type="StaticBody2D" parent="." index="4"]
 position = Vector2(13900, 0)
@@ -122,6 +134,59 @@ position = Vector2(6370, 884)
 [node name="Light3" parent="Lights" index="2" instance=ExtResource("11_spwbi")]
 position = Vector2(13526, 622)
 
+[node name="SpiderNet" parent="DecorationsBack" index="0" instance=ExtResource("12_te47r")]
+position = Vector2(1966, 406)
+rotation = 0.211061
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeB" parent="DecorationsBack" index="1" instance=ExtResource("13_10q4s")]
+position = Vector2(4939, 506)
+scale = Vector2(1, 1)
+
+[node name="TreeB2" parent="DecorationsBack" index="2" instance=ExtResource("13_10q4s")]
+position = Vector2(12467, 451)
+scale = Vector2(1.3, 1.3)
+
+[node name="Gravestone" parent="DecorationsBack" index="3" instance=ExtResource("14_oa2su")]
+position = Vector2(5050, 580)
+
+[node name="HouseB" parent="DecorationsBack" index="4" instance=ExtResource("15_x0m8i")]
+position = Vector2(8653, 676)
+scale = Vector2(1, 1)
+
+[node name="HouseA" parent="DecorationsBack" index="5" instance=ExtResource("16_r6fsx")]
+position = Vector2(7668, 633)
+scale = Vector2(0.8, 0.8)
+
+[node name="Heel" parent="DecorationsBack" index="6" instance=ExtResource("17_th6e8")]
+position = Vector2(10566, 562)
+scale = Vector2(0.6, 0.6)
+
+[node name="TreeA" parent="DecorationsBack" index="7" instance=ExtResource("17_wsxmn")]
+position = Vector2(11087, 477)
+scale = Vector2(1, 1)
+
+[node name="TreeA2" parent="DecorationsBack" index="8" instance=ExtResource("17_wsxmn")]
+position = Vector2(11975, 135)
+scale = Vector2(0.8, 0.8)
+
+[node name="TreeE" parent="DecorationsBack" index="9" instance=ExtResource("19_8ijhu")]
+position = Vector2(11314, 560)
+
+[node name="TreeE2" parent="DecorationsBack" index="10" instance=ExtResource("19_8ijhu")]
+position = Vector2(13754, 567)
+
+[node name="Gravestone2" parent="DecorationsBack" index="11" instance=ExtResource("14_oa2su")]
+position = Vector2(11966, 201)
+scale = Vector2(0.3, 0.3)
+
+[node name="TreeC" parent="DecorationsBack" index="12" instance=ExtResource("20_845j5")]
+position = Vector2(13777, 260)
+scale = Vector2(0.7, 0.7)
+
+[node name="Cemitery" parent="DecorationsBack" index="13" instance=ExtResource("21_6q64p")]
+position = Vector2(12631, 568)
+
 [node name="Spider1" parent="Enemies" index="0" instance=ExtResource("7_452mo")]
 position = Vector2(1959, 404)
 
@@ -217,3 +282,11 @@ position = Vector2(13224, 637)
 speed = 500.0
 wait_time = 0.7
 patrol_length = -200
+
+[node name="TreeA" parent="DecorationsFront" index="0" instance=ExtResource("17_wsxmn")]
+position = Vector2(362, 296)
+scale = Vector2(0.8, 0.8)
+
+[node name="Fence" parent="DecorationsFront" index="1" instance=ExtResource("22_ni5g1")]
+position = Vector2(8180, 810)
+scale = Vector2(0.9, 0.9)
