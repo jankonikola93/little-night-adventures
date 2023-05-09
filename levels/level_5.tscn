@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpraf1kamgvd1"]
+[gd_scene load_steps=24 format=3 uid="uid://bpraf1kamgvd1"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_d05ef"]
 [ext_resource type="PackedScene" uid="uid://b8s3g403hbava" path="res://platforms/platform_gray_e.tscn" id="2_01kvf"]
@@ -15,8 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://dlnc478601ls5" path="res://game_elements/spinner.tscn" id="9_ioesv"]
 [ext_resource type="PackedScene" uid="uid://cv4nipu5rpj1h" path="res://platforms/platform_gray_a_left.tscn" id="10_4nnku"]
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="11_r1buy"]
+[ext_resource type="PackedScene" uid="uid://tkjbn2cl4oc3" path="res://objects/tree_a.tscn" id="12_if5k1"]
+[ext_resource type="PackedScene" uid="uid://l4aprsf82kcv" path="res://objects/house_b.tscn" id="13_2rflp"]
 [ext_resource type="PackedScene" uid="uid://ceg5mjbxam0mx" path="res://game_elements/witch_portal.tscn" id="14_2r3em"]
+[ext_resource type="PackedScene" uid="uid://lk5idjtkam73" path="res://objects/tree_c.tscn" id="14_cnx53"]
 [ext_resource type="PackedScene" uid="uid://bfdcxhbyjkdt6" path="res://characters/enemies/black_flake.tscn" id="15_5nwpb"]
+[ext_resource type="PackedScene" uid="uid://ej63iuqsjmla" path="res://objects/tree_e.tscn" id="15_sayux"]
+[ext_resource type="PackedScene" uid="uid://8wi0um4bjwrv" path="res://objects/fence.tscn" id="22_70l52"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbnu3"]
 normal = Vector2(0, 1)
@@ -141,6 +146,24 @@ position = Vector2(10698, 541)
 [node name="Light3" parent="Lights" index="2" instance=ExtResource("11_r1buy")]
 position = Vector2(16672, 744)
 
+[node name="TreeA" parent="DecorationsBack" index="0" instance=ExtResource("12_if5k1")]
+position = Vector2(5868, 481)
+scale = Vector2(1, 1)
+
+[node name="HouseB" parent="DecorationsBack" index="1" instance=ExtResource("13_2rflp")]
+position = Vector2(7775, 552)
+
+[node name="HouseB2" parent="DecorationsBack" index="2" instance=ExtResource("13_2rflp")]
+position = Vector2(12886, 552)
+
+[node name="TreeC" parent="DecorationsBack" index="3" instance=ExtResource("14_cnx53")]
+position = Vector2(17319, 307)
+scale = Vector2(1, 1)
+
+[node name="TreeE" parent="DecorationsBack" index="4" instance=ExtResource("15_sayux")]
+position = Vector2(17565, 327)
+scale = Vector2(1, 1)
+
 [node name="Spider1" parent="Enemies" index="0" instance=ExtResource("4_m0qvc")]
 position = Vector2(784, 740)
 
@@ -236,3 +259,12 @@ patrol_length = -200
 [node name="BlackFlake3" parent="Enemies" index="26" instance=ExtResource("15_5nwpb")]
 position = Vector2(16823, 744)
 wait_time = 0.5
+
+[node name="Fence" parent="DecorationsFront" index="0" instance=ExtResource("22_70l52")]
+position = Vector2(11024, 957)
+scale = Vector2(0.8, 0.8)
+
+[node name="Fence2" parent="DecorationsFront" index="1" instance=ExtResource("22_70l52")]
+position = Vector2(10536, 957)
+scale = Vector2(0.8, 0.8)
+flip_h = true
