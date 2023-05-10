@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c16ekw5g5cq5h"]
+[gd_scene load_steps=27 format=3 uid="uid://c16ekw5g5cq5h"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_2xgf8"]
 [ext_resource type="PackedScene" uid="uid://b5rswdpirdwyv" path="res://ui/menu_button.tscn" id="1_ylyyu"]
@@ -26,10 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://b7ytrrjbc4of8" path="res://objects/heel.tscn" id="20_r6gkg"]
 [ext_resource type="PackedScene" uid="uid://ej63iuqsjmla" path="res://objects/tree_e.tscn" id="21_5p5aj"]
 [ext_resource type="PackedScene" uid="uid://dlnnncnrcwl7s" path="res://objects/swing.tscn" id="23_owusg"]
-[ext_resource type="Texture2D" uid="uid://bmxngdq4sksem" path="res://assets/effects/light/Oval - 128x128.png" id="27_5ny0p"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mfx6k"]
-blend_mode = 1
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -205,12 +201,6 @@ text = "Exit"
 
 [node name="ConfirmationDialog" parent="." instance=ExtResource("3_fwdlk")]
 metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_mfx6k")
-position = Vector2(219, 506)
-rotation = 1.5708
-texture = ExtResource("27_5ny0p")
 
 [connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/ControllsButton" to="." method="_on_controlls_button_pressed"]
