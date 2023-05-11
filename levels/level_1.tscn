@@ -91,13 +91,13 @@ position = Vector2(8359, 445)
 position = Vector2(9020, 874)
 
 [node name="Platform16" parent="Platforms" index="15" instance=ExtResource("2_ha45i")]
-position = Vector2(9816, 875)
+position = Vector2(9817, 875)
 
 [node name="Platform17" parent="Platforms" index="16" instance=ExtResource("2_ha45i")]
 position = Vector2(10341, 875)
 
 [node name="Platform18" parent="Platforms" index="17" instance=ExtResource("2_ha45i")]
-position = Vector2(10866, 875)
+position = Vector2(10865, 875)
 
 [node name="Platform19" parent="Platforms" index="18" instance=ExtResource("9_1kpkr")]
 position = Vector2(11742, 622)
