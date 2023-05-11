@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://q4t8f1k65i7u"]
+[gd_scene load_steps=26 format=3 uid="uid://q4t8f1k65i7u"]
 
 [ext_resource type="PackedScene" uid="uid://cjfs3xrhuoq36" path="res://levels/level_base.tscn" id="1_g3cyi"]
 [ext_resource type="PackedScene" uid="uid://bjpmbjj7kesaj" path="res://platforms/spikes_platform.tscn" id="3_41fqq"]
@@ -16,8 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://lr3qq4cvup2h" path="res://platforms/platform_black_d_left.tscn" id="10_3np7e"]
 [ext_resource type="PackedScene" uid="uid://b3r7co36snufs" path="res://characters/enemies/spider.tscn" id="11_1mspe"]
 [ext_resource type="PackedScene" uid="uid://cdnb54ugpkth5" path="res://game_elements/light.tscn" id="12_xup2s"]
+[ext_resource type="PackedScene" uid="uid://tkjbn2cl4oc3" path="res://objects/tree_a.tscn" id="13_4d27n"]
+[ext_resource type="PackedScene" uid="uid://ej63iuqsjmla" path="res://objects/tree_e.tscn" id="14_cbdkf"]
 [ext_resource type="PackedScene" uid="uid://ceg5mjbxam0mx" path="res://game_elements/witch_portal.tscn" id="15_58a8y"]
+[ext_resource type="PackedScene" uid="uid://lk5idjtkam73" path="res://objects/tree_c.tscn" id="15_pasxl"]
+[ext_resource type="PackedScene" uid="uid://by6ivurdlda07" path="res://objects/house_c.tscn" id="16_lmv8j"]
+[ext_resource type="PackedScene" uid="uid://dyw5htsgilltf" path="res://objects/tree_b.tscn" id="17_1dn1s"]
 [ext_resource type="PackedScene" uid="uid://e3agabqev7p6" path="res://characters/enemies/wraith.tscn" id="17_lh3yp"]
+[ext_resource type="PackedScene" uid="uid://l4aprsf82kcv" path="res://objects/house_b.tscn" id="18_r5dac"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jvyq"]
 normal = Vector2(0, 1)
@@ -150,6 +156,39 @@ position = Vector2(8774, 669)
 [node name="Light3" parent="Lights" index="2" instance=ExtResource("12_xup2s")]
 position = Vector2(15107, 312)
 
+[node name="TreeA" parent="DecorationsBack" index="0" instance=ExtResource("13_4d27n")]
+position = Vector2(1113, 489)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeE" parent="DecorationsBack" index="1" instance=ExtResource("14_cbdkf")]
+position = Vector2(4230, 688)
+scale = Vector2(1, 1)
+
+[node name="TreeC" parent="DecorationsBack" index="2" instance=ExtResource("15_pasxl")]
+position = Vector2(4473, 702)
+scale = Vector2(0.8, 0.8)
+
+[node name="HouseC" parent="DecorationsBack" index="3" instance=ExtResource("16_lmv8j")]
+position = Vector2(7203, 152)
+scale = Vector2(0.5, 0.5)
+
+[node name="TreeB" parent="DecorationsBack" index="4" instance=ExtResource("17_1dn1s")]
+position = Vector2(8014, 324)
+scale = Vector2(0.7, 0.7)
+flip_h = true
+
+[node name="TreeB2" parent="DecorationsBack" index="5" instance=ExtResource("17_1dn1s")]
+position = Vector2(10905, 515)
+scale = Vector2(1.2, 1.2)
+flip_h = true
+
+[node name="HouseB" parent="DecorationsBack" index="6" instance=ExtResource("18_r5dac")]
+position = Vector2(9913, 450)
+scale = Vector2(0.6, 0.6)
+
+[node name="TreeE2" parent="DecorationsBack" index="7" instance=ExtResource("14_cbdkf")]
+position = Vector2(10729, 614)
+
 [node name="Spinner1" parent="Enemies" index="0" instance=ExtResource("6_hkcn6")]
 position = Vector2(618, 350)
 
@@ -259,3 +298,7 @@ position = Vector2(8902, 672)
 
 [node name="BlackFlake9" parent="Enemies" index="32" instance=ExtResource("7_bwml5")]
 position = Vector2(8902, 320)
+
+[node name="TreeA2" parent="DecorationsFront" index="0" instance=ExtResource("13_4d27n")]
+position = Vector2(3967, 688)
+scale = Vector2(1, 1)
