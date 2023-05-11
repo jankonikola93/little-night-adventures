@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://pjlqcmcvycro"]
+[gd_scene load_steps=30 format=3 uid="uid://pjlqcmcvycro"]
 
 [ext_resource type="Texture2D" uid="uid://bofa3427wu888" path="res://assets/characters/player/SpriteSheet.png" id="1_4ptyx"]
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_7k7au"]
@@ -159,9 +159,6 @@ height = 64.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rt88w"]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhblr"]
-size = Vector2(20, 56)
-
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_7k7au")
@@ -202,13 +199,6 @@ shape = SubResource("CapsuleShape2D_jp1vf")
 [node name="CollisionShapeBottom" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 18)
 shape = SubResource("CircleShape2D_rt88w")
-
-[node name="RopeDetectingArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeDetectingArea"]
-shape = SubResource("RectangleShape2D_xhblr")
 
 [node name="FloorRayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 30)

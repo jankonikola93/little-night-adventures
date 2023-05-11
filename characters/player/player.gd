@@ -25,7 +25,6 @@ const DUST_EXPLOSION_EFFECT = preload("res://effects/dust_explosion.tscn")
 @onready var sprite := $Sprite
 @onready var animation_tree := $AnimationTree
 @onready var state_machine = animation_tree["parameters/playback"]
-@onready var rope_detecting_area := $RopeDetectingArea
 @onready var dash_cooldown_timer := $DashCooldownTimer
 @onready var camera := $Camera
 @onready var dust_timer := $DustTimer
@@ -42,10 +41,6 @@ var is_on_rope := false
 var rope_segment : RopeSegment
 var can_dash := true
 var current_state = State.IDLE
-
-
-func _ready():
-	_connect_rope_detecting_area_signals()
 
 
 func set_camera(limit: Vector4):
@@ -71,15 +66,6 @@ func _die():
 
 
 func _physics_process(delta: float):
-#	if is_on_rope and rope_segment != null:
-#		if Input.is_action_just_pressed("jump"):
-#			jump_buffer_counter = jump_buffer_time
-#			coyote_counter = 1
-#			is_on_rope = false
-#			return
-#		global_position = rope_segment.global_position
-#		return
-	
 	if floor_raycast.is_colliding():
 		_add_jump_dust_effect(floor_raycast.get_collision_point())
 		floor_raycast.enabled = false
@@ -184,32 +170,6 @@ func _add_dust_explosion():
 	var dust_explosion = DUST_EXPLOSION_EFFECT.instantiate()
 	dust_explosion.global_position = global_position
 	get_parent().add_child(dust_explosion)
-
-
-func _connect_rope_detecting_area_signals():
-	if not rope_detecting_area.is_connected("area_entered", _on_rope_detecting_area_area_entered):
-		rope_detecting_area.area_entered.connect(_on_rope_detecting_area_area_entered.bind())
-
-
-func _on_rope_detecting_area_area_entered(area: RopeSegment):
-	if area == null:
-		return
-	is_on_rope = true
-	rope_segment = area
-	rope_detecting_area.disconnect("area_entered", _on_rope_detecting_area_area_entered)
-	if not rope_detecting_area.is_connected("area_exited", _on_rope_detecting_area_area_exited):
-		rope_detecting_area.area_exited.connect(_on_rope_detecting_area_area_exited.bind())
-	print_debug("on rope")
-
-
-func _on_rope_detecting_area_area_exited(area: RopeSegment):
-	if area == null:
-		return
-	is_on_rope = false
-	rope_segment = null
-	rope_detecting_area.disconnect("area_exited", _on_rope_detecting_area_area_exited)
-	_connect_rope_detecting_area_signals()
-	print_debug("leave rope")
 
 
 func _on_visible_on_screen_notifier_screen_exited():
