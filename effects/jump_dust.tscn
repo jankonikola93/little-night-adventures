@@ -3,35 +3,37 @@
 [ext_resource type="PackedScene" uid="uid://clr5gb2hu1awi" path="res://effects/dust.tscn" id="1_3i2hp"]
 [ext_resource type="Script" path="res://effects/jump_dust.gd" id="1_b7lgc"]
 
-[sub_resource type="Curve" id="Curve_l7fv0"]
-_data = [Vector2(0, 0), 0.0, 0.293939, 0, 0, Vector2(0.989691, 0.109091), -1.19305, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_mipfg"]
+_data = [Vector2(0, 0), 0.0, 0.293939, 0, 0, Vector2(0.989691, 0.109091), -0.646665, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_pj767"]
-curve = SubResource("Curve_l7fv0")
+[sub_resource type="CurveTexture" id="CurveTexture_0ulte"]
+curve = SubResource("Curve_mipfg")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e4cb7"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hc741"]
 particle_flag_disable_z = true
-direction = Vector3(-1, 0, 0)
-spread = 0.0
+direction = Vector3(-1, -1, 0)
+spread = 15.0
 flatness = 1.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
+initial_velocity_min = 20.0
+initial_velocity_max = 70.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_pj767")
+scale_curve = SubResource("CurveTexture_0ulte")
 color = Color(0.847059, 0.847059, 0.847059, 1)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3olhb"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1erab"]
 particle_flag_disable_z = true
-spread = 0.0
+direction = Vector3(1, -1, 0)
+spread = 15.0
+flatness = 1.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
+initial_velocity_min = 20.0
+initial_velocity_max = 70.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_pj767")
+scale_curve = SubResource("CurveTexture_0ulte")
 color = Color(0.847059, 0.847059, 0.847059, 1)
 
 [node name="JumpDust" type="Node2D"]
@@ -39,9 +41,9 @@ process_mode = 3
 script = ExtResource("1_b7lgc")
 
 [node name="DustLeft" parent="." instance=ExtResource("1_3i2hp")]
-process_material = SubResource("ParticleProcessMaterial_e4cb7")
+process_material = SubResource("ParticleProcessMaterial_hc741")
 lifetime = 0.5
 
 [node name="DustRight" parent="." instance=ExtResource("1_3i2hp")]
-process_material = SubResource("ParticleProcessMaterial_3olhb")
+process_material = SubResource("ParticleProcessMaterial_1erab")
 lifetime = 0.5
