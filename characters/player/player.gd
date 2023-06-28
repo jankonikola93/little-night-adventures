@@ -41,6 +41,7 @@ var is_on_rope := false
 var rope_segment : RopeSegment
 var can_dash := true
 var current_state = State.IDLE
+var dash_direction = Vector2.ZERO
 
 
 func set_camera(limit: Vector4):
@@ -101,6 +102,16 @@ func _physics_process(delta: float):
 
 	# Handle Dash
 	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
+		var up_down = Input.get_axis("move_up", "move_down")
+		var left_right = Input.get_axis("move_left", "move_right")
+		dash_direction = Vector2(
+			ceili(abs(left_right)) * sign(left_right),
+			ceili(abs(up_down)) * sign(up_down))
+		if dash_direction == Vector2.ZERO:
+			if sprite.flip_h:
+				dash_direction = Vector2.LEFT
+			else:
+				dash_direction = Vector2.RIGHT
 		is_dashing = true
 		can_dash = false
 		dash_counter = dash_time
@@ -109,33 +120,31 @@ func _physics_process(delta: float):
 			_add_dust_explosion()
 		_change_state(State.DASH)
 	if is_dashing:
-		velocity.y = 0
+		velocity = dash_direction * dash_speed
+		if velocity.y > 0 and is_on_floor():
+			dash_counter = 0
 		if dash_counter > 0:
 			dash_counter -= 1
 		else:
 			is_dashing = false
+			velocity = Vector2.ZERO
 			if dash_cooldown_timer.is_stopped():
 				dash_cooldown_timer.start(dash_cooldown)
-	
-	if dash_counter > 0:
-		current_speed = dash_speed
-	else:
-		current_speed = speed
+		move_and_slide()
+		return
+
+	if dash_counter <= 0:
 		ghost_timer.stop()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = ceili(Input.get_axis("move_left", "move_right"))
+	var left_right = Input.get_axis("move_left", "move_right")
+	var direction = ceili(abs(left_right)) * sign(left_right)
 	if direction:
 		sprite.flip_h = direction < 0
-		velocity.x = direction * current_speed
+		velocity.x = direction * speed
 		if is_on_floor() and velocity.y == 0:
 			_change_state(State.WALK)
-	elif is_dashing:
-		if sprite.flip_h:
-			velocity.x = -current_speed
-		else:
-			velocity.x = current_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
